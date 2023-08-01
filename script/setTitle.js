@@ -1,7 +1,7 @@
 import { table } from './table.js';
 
 const path = window.location.pathname.split('/');
-// console.log("path", path);
+console.log('path', path);
 const part = table.find(
   (eachPart) =>
     eachPart.folderName.localeCompare(path[2], undefined, {
