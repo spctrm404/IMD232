@@ -24,7 +24,9 @@ h5,
 h6 {
   max-width: 61.674ch;
   line-height: 1.5;
+  overflow-wrap: break-word;
   text-wrap: balance;
+  word-break: keep-all;
 }
 
 img,
@@ -59,4 +61,12 @@ video {
 .container--width-fixed {
   width: 70rem;
   padding-inline: 5rem;
+}
+
+.week .center ol > li {
+  max-width: 61.674ch;
+  margin-bottom: 0.25rem;
+}
+.week .center ol > li:last-child {
+  margin-bottom: unset;
 }

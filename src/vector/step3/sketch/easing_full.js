@@ -1,38 +1,12 @@
-// 이 코드는 벡터를 배우는 시점에는 이해하려 하지마세요
-
 const sliderMap = new Map();
 
-const bezierEasingGraphSize = 400;
-let bottomLeftX;
-let bottomLeftY;
+let bezierEasingGraphSize = 0;
+let bottomLeftX = 0;
+let bottomLeftY = 0;
 let cpAX;
 let cpAY;
 let cpBX;
 let cpBY;
-
-function setup() {
-  setSketchContainer(3 / 2, 'canvas');
-
-  bottomLeftX = width / 2 - bezierEasingGraphSize / 2;
-  bottomLeftY = height / 2 + bezierEasingGraphSize / 2;
-  initGraph();
-
-  background(240);
-}
-
-function draw() {
-  background(240);
-  renderCubicBezierEasingGraph(
-    bottomLeftX,
-    bottomLeftY,
-    bezierEasingGraphSize,
-    cpAX,
-    cpAY,
-    cpBX,
-    cpBY,
-    convertMouseXToT()
-  );
-}
 
 const updateCp = (elem) => {
   const cpVal = Number(elem.value);
@@ -57,7 +31,7 @@ const sliderCb = (evt) => {
   updateCp(evt.target);
 };
 
-const initGraph = () => {
+const setEasingUI = () => {
   document.querySelectorAll('.cpSlider').forEach((eachCpSlider) => {
     sliderMap.set(
       eachCpSlider,
@@ -66,21 +40,6 @@ const initGraph = () => {
     eachCpSlider.addEventListener('input', sliderCb);
     updateCp(eachCpSlider);
   });
-};
-
-const convertMouseXToT = () => {
-  const constrainedX = constrain(
-    mouseX,
-    bottomLeftX,
-    bottomLeftX + bezierEasingGraphSize
-  );
-  return map(
-    constrainedX,
-    bottomLeftX,
-    bottomLeftX + bezierEasingGraphSize,
-    0,
-    1
-  );
 };
 
 const getCubicBezierEasing = (cpAX, cpAY, cpBX, cpBY, t) => {
