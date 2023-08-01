@@ -1,8 +1,21 @@
 const aspectRatio = 3 / 2;
 
-const size = 400;
-let bottomLeftX;
-let bottomLeftY;
+const size = 200;
+const bottomLeftX = 100;
+const bottomLeftY = 300;
+const cpAX = 0.5;
+const cpAY = 0.1;
+const cpBX = 0.9;
+const cpBY = 0.2;
+
+let x;
+let y;
+let originX;
+let originY;
+let targetX;
+let targetY;
+let interpolationBegin = 0;
+const interpolationDuration = 60 * 1;
 
 function setup() {
   const canvasContainer = select('#canvas');
@@ -12,8 +25,12 @@ function setup() {
   );
   canvas.parent(canvasContainer);
 
-  bottomLeftX = width / 2 - size / 2;
-  bottomLeftY = height / 2 + size / 2;
+  x = width / 2;
+  y = height / 2;
+  originX = width / 2;
+  originY = height / 2;
+  targetX = width / 2;
+  targetY = height / 2;
 
   background(240);
   textSize(18);
@@ -21,19 +38,56 @@ function setup() {
 
 function draw() {
   background(240);
-  const constrainedX = constrain(mouseX, bottomLeftX, bottomLeftX + size);
-  const t = map(constrainedX, bottomLeftX, bottomLeftX + size, 0, 1);
-  // renderCubicBezierEasingGraph(bottomLeftX, bottomLeftY, size, 0, 0, 1, 1, t);
   renderCubicBezierEasingGraph(
     bottomLeftX,
     bottomLeftY,
     size,
-    0.2,
-    0.4,
-    0.8,
-    0.6,
-    t
+    cpAX,
+    cpAY,
+    cpBX,
+    cpBY,
+    constrain(getNormalizedTime(), 0, 1)
   );
+  interpolate();
+  fill(0, 0, 255);
+  circle(targetX, targetY, 20);
+  fill(255, 0, 0);
+  circle(x, y, 10);
+}
+
+const getNormalizedTime = () => {
+  return (frameCount - interpolationBegin) / interpolationDuration;
+};
+
+const interpolate = () => {
+  // const normalizedTime =
+  //   (frameCount - interpolationBegin) / interpolationDuration;
+  // if (normalizedTime <= 1) {
+  //   x = originX + distanceX * normalizedTime;
+  //   y = originY + distanceY * normalizedTime;
+  // }
+  if (getNormalizedTime() <= 1) {
+    const [bX, bY] = getCubicBezierEasing(
+      cpAX,
+      cpAY,
+      cpBX,
+      cpBY,
+      getNormalizedTime()
+    );
+    distanceX = targetX - originX;
+    distanceY = targetY - originY;
+    x = originX + distanceX * bY;
+    y = originY + distanceY * bY;
+  }
+};
+
+function mousePressed() {
+  originX = x;
+  originY = y;
+  targetX = mouseX;
+  targetY = mouseY;
+
+  interpolationBegin = frameCount;
 }
 
 const getCubicBezierEasing = (cpAX, cpAY, cpBX, cpBY, t) => {

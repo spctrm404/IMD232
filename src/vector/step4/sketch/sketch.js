@@ -1,5 +1,10 @@
 const aspectRatio = 3 / 2;
 
+const cpAX = 0.5;
+const cpAY = 0.1;
+const cpBX = 0.9;
+const cpBY = 0.2;
+
 let x;
 let y;
 let originX;
@@ -37,14 +42,23 @@ function draw() {
   circle(x, y, 10);
 }
 
+const getNormalizedTime = () => {
+  return (frameCount - interpolationBegin) / interpolationDuration;
+};
+
 const interpolate = () => {
-  const normalizedTime =
-    (frameCount - interpolationBegin) / interpolationDuration;
-  if (normalizedTime <= 1) {
+  if (getNormalizedTime() <= 1) {
+    const [bX, bY] = getCubicBezierEasing(
+      cpAX,
+      cpAY,
+      cpBX,
+      cpBY,
+      getNormalizedTime()
+    );
     distanceX = targetX - originX;
     distanceY = targetY - originY;
-    x = originX + distanceX * normalizedTime;
-    y = originY + distanceY * normalizedTime;
+    x = originX + distanceX * bY;
+    y = originY + distanceY * bY;
   }
 };
 
@@ -55,6 +69,12 @@ function mousePressed() {
   targetY = mouseY;
   interpolationBegin = frameCount;
 }
+
+const getCubicBezierEasing = (cpAX, cpAY, cpBX, cpBY, t) => {
+  const bX = bezierPoint(0, cpAX, cpBX, 1, t);
+  const bY = bezierPoint(0, cpAY, cpBY, 1, t);
+  return [bX, bY];
+};
 
 function windowResized() {
   const canvasContainer = select('#canvas');
