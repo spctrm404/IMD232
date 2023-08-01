@@ -11,7 +11,7 @@ function setup() {
   setSketchContainer(3 / 2, 'canvas');
 
   bezierEasingGraphSize = 200;
-  bottomLeftX = 50;
+  bottomLeftX = 100;
   bottomLeftY = 250;
   setEasingUI();
   document.querySelector('#sliderDuration').addEventListener('input', (evt) => {
@@ -45,6 +45,8 @@ function draw() {
   );
   interpolate();
   noStroke();
+  fill(0, 255, 0);
+  circle(originX, originY, 10);
   fill(0, 0, 255);
   circle(targetX, targetY, 20);
   fill(255, 0, 0);

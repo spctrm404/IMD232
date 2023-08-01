@@ -58,10 +58,6 @@ video {
     padding-inline: 5rem;
   }
 }
-.container--width-fixed {
-  width: 70rem;
-  padding-inline: 5rem;
-}
 
 .week .center ol > li {
   max-width: 61.674ch;

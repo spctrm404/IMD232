@@ -4,7 +4,7 @@ let sketchContainerId;
 const setSketchContainer = (aspectRatio, id) => {
   sketchAspectRatio = aspectRatio;
   sketchContainerId = id;
-  const canvasContainer = select(`#${id}`);
+  const canvasContainer = select(`#${sketchContainerId}`);
   const canvas = createCanvas(
     canvasContainer.width,
     (canvasContainer.width * 1) / sketchAspectRatio
@@ -13,7 +13,7 @@ const setSketchContainer = (aspectRatio, id) => {
 };
 
 function windowResized() {
-  const canvasContainer = select(sketchContainerId);
+  const canvasContainer = select(`#${sketchContainerId}`);
   resizeCanvas(
     canvasContainer.width,
     (canvasContainer.width * 1) / sketchAspectRatio

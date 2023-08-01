@@ -21,13 +21,19 @@ function setup() {
 }
 
 function draw() {
-  background(240);
   interpolate();
+
+  background(240);
+
   noStroke();
+  fill(0, 255, 0);
+  circle(originX, originY, 20);
   fill(0, 0, 255);
   circle(targetX, targetY, 20);
   fill(255, 0, 0);
   circle(x, y, 10);
+  stroke(0);
+  line(originX, originY, targetX, targetY);
 }
 
 const interpolate = () => {
@@ -39,8 +45,8 @@ const interpolate = () => {
   // 따라서 정해진 시간에 도달하기 전까지만 수행
   if (normalizedTime <= 1) {
     // 목표 위치 - 기존 위치 = 이동해야할 거리
-    distanceX = targetX - originX;
-    distanceY = targetY - originY;
+    const distanceX = targetX - originX;
+    const distanceY = targetY - originY;
     // 기존 위치 + 이동해야할 거리 * (0~1)
     x = originX + distanceX * normalizedTime;
     y = originY + distanceY * normalizedTime;

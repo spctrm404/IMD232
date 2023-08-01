@@ -28,11 +28,19 @@ function draw() {
   background(240);
   interpolate(cpAX, cpAY, cpBX, cpBY);
   noStroke();
+  fill(0, 255, 0);
+  circle(originX, originY, 10);
   fill(0, 0, 255);
   circle(targetX, targetY, 20);
   fill(255, 0, 0);
   circle(x, y, 10);
 }
+
+const getCubicBezierEasing = (cpAX, cpAY, cpBX, cpBY, t) => {
+  const bX = bezierPoint(0, cpAX, cpBX, 1, t);
+  const bY = bezierPoint(0, cpAY, cpBY, 1, t);
+  return [bX, bY];
+};
 
 const getNormalizedTime = () => {
   return constrain(
