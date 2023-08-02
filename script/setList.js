@@ -1,7 +1,7 @@
 import { table } from './table.js';
 
 const weekDoms = document.querySelectorAll('.week .center');
-console.log(weekDoms);
+// console.log('weekDoms', weekDoms);
 
 table.forEach((eachPart, idx) => {
   const eachWeekDom = weekDoms.item(idx);
@@ -9,6 +9,6 @@ table.forEach((eachPart, idx) => {
   const steps = eachWeekDom.querySelectorAll('ol > li > a');
   title.textContent = `${eachPart.partNo}. ${eachPart.partName}`;
   steps.forEach((eachStep, idx) => {
-    eachStep.textContent = eachPart.chapters[idx].chapterName;
+    eachStep.innerHTML = eachPart.chapters[idx].chapterName;
   });
 });

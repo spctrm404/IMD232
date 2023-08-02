@@ -49,4 +49,35 @@ export const table = [
       },
     ],
   },
+  {
+    partNo: 3,
+    partName: 'Forces : 힘',
+    folderName: 'forces',
+    chapters: [
+      {
+        chapterName: '중력과 바람의 시뮬레이션',
+      },
+      {
+        chapterName: '여러 개체에 적용해보자',
+      },
+      {
+        chapterName: '제대로 중력을 시뮬레이션 해보자',
+      },
+      {
+        chapterName: '마찰을 적용',
+      },
+      {
+        chapterName: '항력을 적용',
+      },
+      {
+        chapterName: '끌개',
+      },
+      {
+        chapterName: '끌개 여러 개체',
+      },
+      {
+        chapterName: '상호 끌개',
+      },
+    ],
+  },
 ];
