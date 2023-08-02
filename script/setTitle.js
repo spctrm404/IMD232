@@ -33,9 +33,9 @@ const setTitle = () => {
     const idx = parseInt(path[pathIdx].replace('step', 0)) - 1;
     // path[5] = substep#
     const subStep = path[pathIdx + 2].replace('substep', '');
-    // document.title = `${part.partNo}-${idx + 1}-${subStep}. ${
-    //   part.chapters[idx].chapterName
-    // }`;
+    document.title = `${part.partNo}-${idx + 1}-${subStep}. ${
+      part.chapters[idx].chapterName
+    }`;
     document.querySelector('.title').innerHTML = `${part.partNo}-${
       idx + 1
     }-${subStep}. ${part.partName} — ${part.chapters[idx].chapterName}`;
@@ -49,9 +49,9 @@ const setTitle = () => {
   } else if (path[pathIdx].toLowerCase().includes('step')) {
     // path[3] = step#
     const idx = parseInt(path[pathIdx].replace('step', 0)) - 1;
-    // document.title = `${part.partNo}-${idx + 1}. ${
-    //   part.chapters[idx].chapterName
-    // }`;
+    document.title = `${part.partNo}-${idx + 1}. ${
+      part.chapters[idx].chapterName
+    }`;
     document.querySelector('.title').innerHTML = `${part.partNo}-${idx + 1}. ${
       part.partName
     } — ${part.chapters[idx].chapterName}`;
