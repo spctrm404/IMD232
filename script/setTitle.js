@@ -19,6 +19,8 @@ const part = table.find((eachPart) => {
   return eachPart.folderName.toLowerCase() === path[pathIdx - 1].toLowerCase();
 });
 
+console.log(part);
+
 const setTitle = () => {
   // path[4] 가 recording일 경우, 촬영용 하위 폴더
   if (path[pathIdx + 1].toLowerCase().includes('recording')) {
@@ -33,6 +35,12 @@ const setTitle = () => {
       idx + 1
     }-${subStep}. ${part.partName} — ${part.chapters[idx].chapterName}`;
     // path[3] = step#
+    console.log(
+      'sub',
+      `${part.partNo}-${idx + 1}-${subStep}. ${part.partName} — ${
+        part.chapters[idx].chapterName
+      }`
+    );
   } else if (path[pathIdx].toLowerCase().includes('step')) {
     // path[3] = step#
     const idx = parseInt(path[pathIdx].replace('step', 0)) - 1;
@@ -42,6 +50,12 @@ const setTitle = () => {
     document.querySelector('.title').innerHTML = `${part.partNo}-${idx + 1}. ${
       part.partName
     } — ${part.chapters[idx].chapterName}`;
+    console.log(
+      'main',
+      `${part.partNo}-${idx + 1}. ${part.partName} — ${
+        part.chapters[idx].chapterName
+      }`
+    );
   }
 };
 
