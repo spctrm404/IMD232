@@ -8,9 +8,7 @@ const path = window.location.pathname.split('/');
 
 // 웹에서는 path[1] = src 이 아니라 path[1] = IMD232
 // 이 경우 하나씩 뒤로 밀어야한다.
-if (path[1].toLowerCase() === 'imd232') {
-  pathIdx + 1;
-}
+if (path[1].toLowerCase() === 'imd232') pathIdx += 1;
 
 console.log('bool', path[1].toLowerCase() === 'imd232');
 console.log('pathIdx', pathIdx);
