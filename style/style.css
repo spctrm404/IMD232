@@ -51,10 +51,12 @@ video {
 @media (width > 45rem) {
   .container {
     padding-inline: 2.5rem;
+    max-width: 85rem;
   }
 }
 @media (width > 70rem) {
   .container {
+    max-width: 90rem;
     padding-inline: 5rem;
   }
 }

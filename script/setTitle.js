@@ -16,7 +16,7 @@ console.log('path', path);
 // path[2] = 파트 구분 폴더 이름
 // table.js 에서 일치하는 것을 가져옴
 const part = table.find((eachPart) => {
-  eachPart.folderName.toLowerCase() === path[pathIdx - 1].toLowerCase();
+  return eachPart.folderName.toLowerCase() === path[pathIdx - 1].toLowerCase();
 });
 
 const setTitle = () => {
@@ -26,9 +26,9 @@ const setTitle = () => {
     const idx = parseInt(path[pathIdx].replace('step', 0)) - 1;
     // path[5] = substep#
     const subStep = path[pathIdx + 2].replace('substep', '');
-    document.title = `${part.partNo}-${idx + 1}-${subStep}. ${
-      part.chapters[idx].chapterName
-    }`;
+    // document.title = `${part.partNo}-${idx + 1}-${subStep}. ${
+    //   part.chapters[idx].chapterName
+    // }`;
     document.querySelector('.title').innerHTML = `${part.partNo}-${
       idx + 1
     }-${subStep}. ${part.partName} — ${part.chapters[idx].chapterName}`;
@@ -36,9 +36,9 @@ const setTitle = () => {
   } else if (path[pathIdx].toLowerCase().includes('step')) {
     // path[3] = step#
     const idx = parseInt(path[pathIdx].replace('step', 0)) - 1;
-    document.title = `${part.partNo}-${idx + 1}. ${
-      part.chapters[idx].chapterName
-    }`;
+    // document.title = `${part.partNo}-${idx + 1}. ${
+    //   part.chapters[idx].chapterName
+    // }`;
     document.querySelector('.title').innerHTML = `${part.partNo}-${idx + 1}. ${
       part.partName
     } — ${part.chapters[idx].chapterName}`;
