@@ -16,6 +16,8 @@ console.log('path', path);
 // path[2] = 파트 구분 폴더 이름
 // table.js 에서 일치하는 것을 가져옴
 const part = table.find((eachPart) => {
+  console.log('part', eachPart.folderName.toLowerCase());
+  console.log('path', path[pathIdx - 1].toLowerCase());
   return eachPart.folderName.toLowerCase() === path[pathIdx - 1].toLowerCase();
 });
 
