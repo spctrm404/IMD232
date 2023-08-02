@@ -10,6 +10,9 @@ const path = window.location.pathname.split('/');
 // 이 경우 하나씩 뒤로 밀어야한다.
 if (path[1].toLowerCase() === 'imd232') pathIdx + 1;
 
+console.log('bool', path[1].toLowerCase() === 'imd232');
+console.log('pathIdx', pathIdx);
+
 // 서버 디버그용
 console.log('path', path);
 
