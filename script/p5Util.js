@@ -19,3 +19,7 @@ function windowResized() {
     (canvasContainer.width * 1) / sketchAspectRatio
   );
 }
+
+function isMouseOutsideCanvas() {
+  return mouseX < 0 || mouseX > width || mouseY < 0 || mouseY > height;
+}

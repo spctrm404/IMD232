@@ -84,6 +84,6 @@ const setTarget = (tX, tY) => {
 };
 
 function mousePressed() {
-  if (mouseX < 0 || mouseX > width || mouseY < 0 || mouseY > height) return;
+  if (isMouseOutsideCanvas()) return;
   setTarget(mouseX, mouseY);
 }
