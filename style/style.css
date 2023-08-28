@@ -10,8 +10,10 @@ html {
 
 body {
   overflow: hidden;
+
   margin: 0;
-  font-family: "Spoqa Han Sans Neo", "sans-serif";
+
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   font-size: 1.125rem;
   line-height: 1.7;
 }
@@ -23,10 +25,11 @@ h4,
 h5,
 h6 {
   max-width: 61.674ch;
+
   line-height: 1.5;
-  overflow-wrap: break-word;
   text-wrap: balance;
   word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 img,
@@ -39,21 +42,23 @@ video {
 }
 
 .viewport {
-  height: 100dvh;
   overflow-x: auto;
   overflow-y: scroll;
+  height: 100dvh;
 }
 
 .container {
   margin-inline: auto;
   padding-inline: 1.25rem;
 }
+
 @media (width > 45rem) {
   .container {
-    padding-inline: 2.5rem;
     max-width: 85rem;
+    padding-inline: 2.5rem;
   }
 }
+
 @media (width > 70rem) {
   .container {
     max-width: 90rem;
