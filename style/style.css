@@ -1,39 +1,236 @@
+:root {
+  --neutral-0: oklch(0% 0.01 0deg);
+  --neutral-1: oklch(1% 0.01 0deg);
+  --neutral-2: oklch(2% 0.01 0deg);
+  --neutral-3: oklch(3% 0.01 0deg);
+  --neutral-4: oklch(4% 0.01 0deg);
+  --neutral-5: oklch(5% 0.01 0deg);
+  --neutral-6: oklch(6% 0.01 0deg);
+  --neutral-7: oklch(7% 0.01 0deg);
+  --neutral-8: oklch(8% 0.01 0deg);
+  --neutral-9: oklch(9% 0.01 0deg);
+  --neutral-10: oklch(10% 0.01 0deg);
+  --neutral-11: oklch(11% 0.01 0deg);
+  --neutral-12: oklch(12% 0.01 0deg);
+  --neutral-13: oklch(13% 0.01 0deg);
+  --neutral-14: oklch(14% 0.01 0deg);
+  --neutral-15: oklch(15% 0.01 0deg);
+  --neutral-16: oklch(16% 0.01 0deg);
+  --neutral-17: oklch(17% 0.01 0deg);
+  --neutral-18: oklch(18% 0.01 0deg);
+  --neutral-19: oklch(19% 0.01 0deg);
+  --neutral-20: oklch(20% 0.01 0deg);
+  --neutral-21: oklch(21% 0.01 0deg);
+  --neutral-22: oklch(22% 0.01 0deg);
+  --neutral-23: oklch(23% 0.01 0deg);
+  --neutral-24: oklch(24% 0.01 0deg);
+  --neutral-25: oklch(25% 0.01 0deg);
+  --neutral-26: oklch(26% 0.01 0deg);
+  --neutral-27: oklch(27% 0.01 0deg);
+  --neutral-28: oklch(28% 0.01 0deg);
+  --neutral-29: oklch(29% 0.01 0deg);
+  --neutral-30: oklch(30% 0.01 0deg);
+  --neutral-31: oklch(31% 0.01 0deg);
+  --neutral-32: oklch(32% 0.01 0deg);
+  --neutral-33: oklch(33% 0.01 0deg);
+  --neutral-34: oklch(34% 0.01 0deg);
+  --neutral-35: oklch(35% 0.01 0deg);
+  --neutral-36: oklch(36% 0.01 0deg);
+  --neutral-37: oklch(37% 0.01 0deg);
+  --neutral-38: oklch(38% 0.01 0deg);
+  --neutral-39: oklch(39% 0.01 0deg);
+  --neutral-40: oklch(40% 0.01 0deg);
+  --neutral-41: oklch(41% 0.01 0deg);
+  --neutral-42: oklch(42% 0.01 0deg);
+  --neutral-43: oklch(43% 0.01 0deg);
+  --neutral-44: oklch(44% 0.01 0deg);
+  --neutral-45: oklch(45% 0.01 0deg);
+  --neutral-46: oklch(46% 0.01 0deg);
+  --neutral-47: oklch(47% 0.01 0deg);
+  --neutral-48: oklch(48% 0.01 0deg);
+  --neutral-49: oklch(49% 0.01 0deg);
+  --neutral-50: oklch(50% 0.01 0deg);
+  --neutral-51: oklch(51% 0.01 0deg);
+  --neutral-52: oklch(52% 0.01 0deg);
+  --neutral-53: oklch(53% 0.01 0deg);
+  --neutral-54: oklch(54% 0.01 0deg);
+  --neutral-55: oklch(55% 0.01 0deg);
+  --neutral-56: oklch(56% 0.01 0deg);
+  --neutral-57: oklch(57% 0.01 0deg);
+  --neutral-58: oklch(58% 0.01 0deg);
+  --neutral-59: oklch(59% 0.01 0deg);
+  --neutral-60: oklch(60% 0.01 0deg);
+  --neutral-61: oklch(61% 0.01 0deg);
+  --neutral-62: oklch(62% 0.01 0deg);
+  --neutral-63: oklch(63% 0.01 0deg);
+  --neutral-64: oklch(64% 0.01 0deg);
+  --neutral-65: oklch(65% 0.01 0deg);
+  --neutral-66: oklch(66% 0.01 0deg);
+  --neutral-67: oklch(67% 0.01 0deg);
+  --neutral-68: oklch(68% 0.01 0deg);
+  --neutral-69: oklch(69% 0.01 0deg);
+  --neutral-70: oklch(70% 0.01 0deg);
+  --neutral-71: oklch(71% 0.01 0deg);
+  --neutral-72: oklch(72% 0.01 0deg);
+  --neutral-73: oklch(73% 0.01 0deg);
+  --neutral-74: oklch(74% 0.01 0deg);
+  --neutral-75: oklch(75% 0.01 0deg);
+  --neutral-76: oklch(76% 0.01 0deg);
+  --neutral-77: oklch(77% 0.01 0deg);
+  --neutral-78: oklch(78% 0.01 0deg);
+  --neutral-79: oklch(79% 0.01 0deg);
+  --neutral-80: oklch(80% 0.01 0deg);
+  --neutral-81: oklch(81% 0.01 0deg);
+  --neutral-82: oklch(82% 0.01 0deg);
+  --neutral-83: oklch(83% 0.01 0deg);
+  --neutral-84: oklch(84% 0.01 0deg);
+  --neutral-85: oklch(85% 0.01 0deg);
+  --neutral-86: oklch(86% 0.01 0deg);
+  --neutral-87: oklch(87% 0.01 0deg);
+  --neutral-88: oklch(88% 0.01 0deg);
+  --neutral-89: oklch(89% 0.01 0deg);
+  --neutral-90: oklch(90% 0.01 0deg);
+  --neutral-91: oklch(91% 0.01 0deg);
+  --neutral-92: oklch(92% 0.01 0deg);
+  --neutral-93: oklch(93% 0.01 0deg);
+  --neutral-94: oklch(94% 0.01 0deg);
+  --neutral-95: oklch(95% 0.01 0deg);
+  --neutral-96: oklch(96% 0.01 0deg);
+  --neutral-97: oklch(97% 0.01 0deg);
+  --neutral-98: oklch(98% 0.01 0deg);
+  --neutral-99: oklch(99% 0.01 0deg);
+  --neutral-100: oklch(100% 0.01 0deg);
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html {
-  color-scheme: light dark;
-}
-
 body {
-  overflow: hidden;
-
-  margin: 0;
-
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   font-size: 1.125rem;
-  line-height: 1.7;
+  line-height: 1.875rem;
+  overflow: hidden;
+  margin: 0;
+  font-family: "Spoqa Han Sans Neo", sans-serif;
+  font-weight: 500;
+  color: var(--neutral-90);
+  background-color: var(--neutral-10);
+}
+@media (width < 60rem) {
+  body {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  max-width: 61.674ch;
-
-  line-height: 1.5;
+h1 {
+  font-size: 5.125rem;
+  line-height: 8.75rem;
   text-wrap: balance;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
+@media (width < 60rem) {
+  h1 {
+    font-size: 2.25rem;
+    line-height: 3.875rem;
+  }
+}
+
+h2 {
+  font-size: 4.0625rem;
+  line-height: 6.875rem;
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+@media (width < 60rem) {
+  h2 {
+    font-size: 2rem;
+    line-height: 3.375rem;
+  }
+}
+
+h3 {
+  font-size: 3.1875rem;
+  line-height: 5.375rem;
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+@media (width < 60rem) {
+  h3 {
+    font-size: 1.75rem;
+    line-height: 3rem;
+  }
+}
+
+h4 {
+  font-size: 2.5rem;
+  line-height: 4.25rem;
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+@media (width < 60rem) {
+  h4 {
+    font-size: 1.5625rem;
+    line-height: 2.625rem;
+  }
+}
+
+h5 {
+  font-size: 2rem;
+  line-height: 3.375rem;
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+@media (width < 60rem) {
+  h5 {
+    font-size: 1.375rem;
+    line-height: 2.375rem;
+  }
+}
+
+h6 {
+  font-size: 1.5625rem;
+  line-height: 2.625rem;
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+@media (width < 60rem) {
+  h6 {
+    font-size: 1.25rem;
+    line-height: 2.125rem;
+  }
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+  max-width: 93ch;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+@media (width < 60rem) {
+  p {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    max-width: 93ch;
+  }
+}
+@media (width < 40rem) {
+  p {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+  }
+}
 
 img,
-picture,
 svg,
 canvas,
 video {
@@ -48,28 +245,22 @@ video {
 }
 
 .container {
+  max-width: 80rem;
   margin-inline: auto;
-  padding-inline: 1.25rem;
+  padding-inline: 4rem;
 }
-
-@media (width > 45rem) {
+@media (width < 80rem) {
   .container {
-    max-width: 85rem;
-    padding-inline: 2.5rem;
+    padding-inline: 3rem;
   }
 }
-
-@media (width > 70rem) {
+@media (width < 60rem) {
   .container {
-    max-width: 90rem;
-    padding-inline: 5rem;
+    padding-inline: 2rem;
   }
 }
-
-.week .center ol > li {
-  max-width: 61.674ch;
-  margin-bottom: 0.25rem;
-}
-.week .center ol > li:last-child {
-  margin-bottom: unset;
+@media (width < 40rem) {
+  .container {
+    padding-inline: 1rem;
+  }
 }
