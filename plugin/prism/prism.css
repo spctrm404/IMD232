@@ -2,27 +2,27 @@
 https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+sass+scss&plugins=line-highlight+line-numbers+file-highlight+show-language+toolbar+copy-to-clipboard+download-button+match-braces */
 code[class*=language-],
 pre[class*=language-] {
-  color: oklch(90% 0 0/1);
-  background: 0 0;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   font-size: 1em;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
   line-height: 1.5;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
   -webkit-hyphens: none;
-  hyphens: none;
+          hyphens: none;
+  color: oklch(90% 0 0/1);
+  text-align: left;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+  white-space: pre;
+  background: 0 0;
 }
 
 pre[class*=language-] {
-  padding: 1em;
-  margin: 0.5em 0;
   overflow: auto;
+  margin: 0.5em 0;
+  padding: 1em;
 }
 pre[class*=language-]::-webkit-scrollbar {
   width: 0.5rem;
@@ -42,8 +42,8 @@ pre[class*=language-] {
 
 :not(pre) > code[class*=language-] {
   padding: 0.1em;
-  border-radius: 0.3em;
   white-space: normal;
+  border-radius: 0.3em;
 }
 
 .token.block-comment,
@@ -62,24 +62,24 @@ pre[class*=language-] {
 .token.deleted,
 .token.namespace,
 .token.tag {
-  color: oklch(70% 0.1 20);
+  color: oklch(70% 0.1 20deg);
 }
 
 .token.function-name {
-  color: oklch(70% 0.1 250);
+  color: oklch(70% 0.1 250deg);
 }
 
 .token.boolean,
 .token.function,
 .token.number {
-  color: oklch(70% 0.1 53);
+  color: oklch(70% 0.1 53deg);
 }
 
 .token.class-name,
 .token.constant,
 .token.property,
 .token.symbol {
-  color: oklch(70% 0.1 84);
+  color: oklch(70% 0.1 84deg);
 }
 
 .token.atrule,
@@ -87,7 +87,7 @@ pre[class*=language-] {
 .token.important,
 .token.keyword,
 .token.selector {
-  color: oklch(70% 0.1 326);
+  color: oklch(70% 0.1 326deg);
 }
 
 .token.attr-value,
@@ -95,13 +95,13 @@ pre[class*=language-] {
 .token.regex,
 .token.string,
 .token.variable {
-  color: oklch(70% 0.1 156);
+  color: oklch(70% 0.1 156deg);
 }
 
 .token.entity,
 .token.operator,
 .token.url {
-  color: oklch(70% 0.1 195);
+  color: oklch(70% 0.1 195deg);
 }
 
 .token.bold,
@@ -118,7 +118,7 @@ pre[class*=language-] {
 }
 
 .token.inserted {
-  color: oklch(70% 0.1 142);
+  color: oklch(70% 0.1 142deg);
 }
 
 pre[data-line] {
@@ -127,49 +127,49 @@ pre[data-line] {
 }
 
 .line-highlight {
-  position: absolute;
-  left: 0;
-  right: 0;
-  padding: inherit 0;
-  margin-top: 1em;
-  background-color: oklch(80% 0.135 0/0.12);
   pointer-events: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin-top: 1em;
+  padding: inherit 0;
   line-height: inherit;
   white-space: pre;
+  background-color: oklch(80% 0.135 0/0.12);
 }
 
 @media print {
   .line-highlight {
-    -webkit-print-color-adjust: exact;
     color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 }
-.line-highlight:before,
-.line-highlight[data-end]:after {
+.line-highlight::before,
+.line-highlight[data-end]::after {
   content: attr(data-start);
   position: absolute;
   top: 0.4em;
   left: 0.6em;
   min-width: 1em;
   padding: 0 0.5em;
-  background-color: oklch(80% 0.135 0/0.4);
-  color: oklch(80% 0.135 0/1);
   font: bold 65%/1.5 sans-serif;
+  color: oklch(80% 0.135 0/1);
   text-align: center;
-  vertical-align: 0.3em;
-  border-radius: 999px;
   text-shadow: none;
+  vertical-align: 0.3em;
+  background-color: oklch(80% 0.135 0/0.4);
+  border-radius: 999px;
   box-shadow: 0 1px #fff;
 }
 
-.line-highlight[data-end]:after {
+.line-highlight[data-end]::after {
   content: attr(data-end);
   top: auto;
   bottom: 0.4em;
 }
 
-.line-numbers .line-highlight:after,
-.line-numbers .line-highlight:before {
+.line-numbers .line-highlight::after,
+.line-numbers .line-highlight::before {
   content: none;
 }
 
@@ -177,18 +177,18 @@ pre[id].linkable-line-numbers span.line-numbers-rows {
   pointer-events: all;
 }
 
-pre[id].linkable-line-numbers span.line-numbers-rows > span:before {
+pre[id].linkable-line-numbers span.line-numbers-rows > span::before {
   cursor: pointer;
 }
 
-pre[id].linkable-line-numbers span.line-numbers-rows > span:hover:before {
+pre[id].linkable-line-numbers span.line-numbers-rows > span:hover::before {
   background-color: oklch(80% 0.135 0/1);
 }
 
 pre[class*=language-].line-numbers {
+  counter-reset: linenumber;
   position: relative;
   padding-left: 3.8em;
-  counter-reset: linenumber;
 }
 
 pre[class*=language-].line-numbers > code {
@@ -197,29 +197,29 @@ pre[class*=language-].line-numbers > code {
 }
 
 .line-numbers .line-numbers-rows {
-  position: absolute;
   pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  position: absolute;
   top: 0;
-  font-size: 100%;
   left: -3.8em;
   width: 3em;
+  font-size: 100%;
   letter-spacing: -1px;
   border-right: 1px solid oklch(60% 0 0/1);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
 }
 
 .line-numbers-rows > span {
-  display: block;
   counter-increment: linenumber;
+  display: block;
 }
 
-.line-numbers-rows > span:before {
+.line-numbers-rows > span::before {
   content: counter(linenumber);
-  color: oklch(60% 0 0/1);
   display: block;
   padding-right: 0.8em;
+  color: oklch(60% 0 0/1);
   text-align: right;
 }
 
@@ -232,8 +232,8 @@ div.code-toolbar > .toolbar {
   z-index: 10;
   top: 0.3em;
   right: 0.2em;
-  transition: opacity 0.3s ease-in-out;
   opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 div.code-toolbar:hover > .toolbar {
@@ -253,24 +253,24 @@ div.code-toolbar > .toolbar > .toolbar-item + .toolbar-item {
 
 div.code-toolbar > .toolbar > .toolbar-item > button {
   cursor: pointer;
-  background: 0 0;
-  border: 0;
-  color: inherit;
-  font: inherit;
-  line-height: normal;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   overflow: visible;
   padding: 0;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  font: inherit;
+  line-height: normal;
+  color: inherit;
+  background: 0 0;
+  border: 0;
 }
 
 div.code-toolbar > .toolbar > .toolbar-item > a,
 div.code-toolbar > .toolbar > .toolbar-item > button,
 div.code-toolbar > .toolbar > .toolbar-item > span {
-  color: oklch(20% 0.09 0/1);
-  font-size: 0.8em;
   padding: 0.25em 0.5em;
+  font-size: 0.8em;
+  color: oklch(20% 0.09 0/1);
   background: oklch(80% 0.135 0/1);
   border-radius: 0.5em;
 }
