@@ -8,7 +8,7 @@ let interpolationBegin = 0;
 let interpolationDuration = 60 * 1;
 
 function setup() {
-  setSketchContainer(3 / 2, 'canvas');
+  setCanvasContainer('canvas', 3, 2, true);
 
   bezierEasingGraphSize = 200;
   bottomLeftX = 100;

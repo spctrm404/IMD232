@@ -1,5 +1,5 @@
 function setup() {
-  setSketchContainer(3 / 2, 'canvas');
+  setCanvasContainer('canvas', 3, 2, true);
   background(240);
 }
 

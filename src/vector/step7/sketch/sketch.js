@@ -4,7 +4,7 @@ const r = 10;
 const vectorRenderMult = 10;
 
 function setup() {
-  setSketchContainer(3 / 2, 'canvas');
+  setCanvasContainer('canvas', 3, 2, true);
 
   pos.x = 10;
   pos.y = 10;

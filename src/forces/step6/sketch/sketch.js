@@ -8,7 +8,7 @@ let interpolationBegin = 0;
 const interpolationDuration = 60 * 1;
 
 function setup() {
-  setSketchContainer(3 / 2, 'canvas');
+  setCanvasContainer('canvas', 3, 2, true);
 
   x = width / 2;
   y = height / 2;

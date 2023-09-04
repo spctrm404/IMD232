@@ -11,7 +11,7 @@ let cpBX;
 let cpBY;
 
 function setup() {
-  setSketchContainer(3 / 2, 'canvas');
+  setCanvasContainer('canvas', 3, 2, true);
 
   bottomLeftX = width / 2 - bezierEasingGraphSize / 2;
   bottomLeftY = height / 2 + bezierEasingGraphSize / 2;

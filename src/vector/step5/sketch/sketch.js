@@ -6,7 +6,7 @@ const r = 10;
 const vectorRenderMult = 10;
 
 function setup() {
-  setSketchContainer(3 / 2, 'canvas');
+  setCanvasContainer('canvas', 3, 2, true);
 
   x = 10;
   y = 10;

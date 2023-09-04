@@ -12,7 +12,7 @@ const cpBX = 0.9;
 const cpBY = 0.2;
 
 function setup() {
-  setSketchContainer(3 / 2, 'canvas');
+  setCanvasContainer('canvas', 3, 2, true);
 
   x = width / 2;
   y = height / 2;

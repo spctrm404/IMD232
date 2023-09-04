@@ -3,7 +3,7 @@ const minuteLength = 200;
 const hourLength = 150;
 
 function setup() {
-  setSketchContainer(3 / 2, 'canvas');
+  setCanvasContainer('canvas', 3, 2, true);
 
   background(240);
 }

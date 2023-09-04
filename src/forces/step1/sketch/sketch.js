@@ -3,7 +3,7 @@ let gravity;
 let wind;
 
 function setup() {
-  setSketchContainer(3 / 2, 'canvas');
+  setCanvasContainer('canvas', 3, 2, true);
 
   mover = new Mover(width / 2, height / 2, 1, 24);
   gravity = createVector(0, 0.1);

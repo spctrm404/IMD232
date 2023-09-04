@@ -6,7 +6,7 @@ const r = 20;
 let mouseVector;
 
 function setup() {
-  setSketchContainer(3 / 2, 'canvas');
+  setCanvasContainer('canvas', 3, 2, true);
 
   pos = createVector(width / 2, height / 2);
   vel = p5.Vector.random2D();

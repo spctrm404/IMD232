@@ -4,7 +4,7 @@ let gravity;
 let wind;
 
 function setup() {
-  setSketchContainer(3 / 2, 'canvas');
+  setCanvasContainer('canvas', 3, 2, true);
 
   // moverArray.push(new Mover(width / 3, height / 2, 1, 24));
   // moverArray.push(new Mover((width / 3) * 2, height / 2, 10, 24));
