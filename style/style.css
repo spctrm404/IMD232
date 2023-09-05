@@ -165,8 +165,8 @@ ul,
 ol {
   padding-left: 2em;
 }
-
-li {
+ul > *,
+ol > * {
   margin-block: 0.5em;
 }
 
@@ -176,9 +176,6 @@ dt {
 
 dd {
   margin-left: 2em;
-}
-dd + dd {
-  margin-top: 0.5em;
 }
 
 img,
@@ -239,38 +236,45 @@ strong {
 .table,
 .grid {
   display: grid;
-  grid-template-columns: repeat(1, max-content) minmax(15.5ch, 31ch);
-  row-gap: 0.5em;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1em;
   -moz-column-gap: 1.5em;
        column-gap: 1.5em;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 100%;
 }
 .table--col-3,
 .grid--col-3 {
-  grid-template-columns: repeat(2, max-content) minmax(15.5ch, 31ch);
+  grid-template-columns: repeat(3, 1fr);
 }
 .table--col-4,
 .grid--col-4 {
-  grid-template-columns: repeat(3, max-content) minmax(15.5ch, 31ch);
+  grid-template-columns: repeat(4, 1fr);
 }
 .table--col-5,
 .grid--col-5 {
-  grid-template-columns: repeat(4, max-content) minmax(15.5ch, 31ch);
+  grid-template-columns: repeat(5, 1fr);
 }
 .table--col-6,
 .grid--col-6 {
-  grid-template-columns: repeat(5, max-content) minmax(15.5ch, 31ch);
+  grid-template-columns: repeat(6, 1fr);
 }
 .table--col-7,
 .grid--col-7 {
-  grid-template-columns: repeat(6, max-content) minmax(15.5ch, 31ch);
+  grid-template-columns: repeat(7, 1fr);
 }
 .table--col-8,
 .grid--col-8 {
-  grid-template-columns: repeat(7, max-content) minmax(15.5ch, 31ch);
+  grid-template-columns: repeat(8, 1fr);
 }
 .table--numbering,
 .grid--numbering {
   counter-reset: table-counter;
+}
+.table--full-width,
+.grid--full-width {
+  width: 100%;
 }
 .table .header,
 .grid .header {
@@ -288,9 +292,6 @@ strong {
 
 .table {
   overflow-x: auto;
-  width: -moz-fit-content;
-  width: fit-content;
-  max-width: 100%;
   padding: 2rem;
   background-color: oklch(17% 0 0/1);
 }
@@ -309,3 +310,13 @@ strong {
 .table::-webkit-scrollbar-thumb {
   background-color: oklch(60% 0 0/1);
 }
+
+.content-container {
+  padding: 2rem;
+  background-color: oklch(17% 0 0/1);
+}
+@media (width < 60rem) {
+  .content-container {
+    padding: 1rem;
+  }
+}/*# sourceMappingURL=style.css.map */
