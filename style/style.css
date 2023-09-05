@@ -155,15 +155,29 @@ a:visited {
   color: oklch(80% 0.05 0/1);
 }
 
-li + li {
-  margin-top: 0.5em;
+ul,
+ol,
+dl {
+  margin-block: 0.5em;
+}
+
+ul,
+ol {
+  padding-left: 2em;
+}
+
+li {
+  margin-block: 0.5em;
 }
 
 dt {
   font-weight: 700;
 }
 
-dd + dt {
+dd {
+  margin-left: 2em;
+}
+dd + dd {
   margin-top: 0.5em;
 }
 
@@ -267,9 +281,9 @@ strong {
   content: counter(table-counter);
   counter-increment: table-counter;
 }
-.table > * > * + *,
-.grid > * > * + * {
-  margin-top: 0.25em;
+.table > *,
+.grid > * {
+  margin-block: 0.25em;
 }
 
 .table {

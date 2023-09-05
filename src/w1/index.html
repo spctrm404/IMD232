@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../../style/style.css" />
 
     <link rel="stylesheet" href="../../plugin/prism/prism.css" />
+    <link rel="stylesheet" href="../../plugin/prism/theme.css" />
     <script src="../../plugin/prism/prism.js" defer></script>
   </head>
   <body>
@@ -26,58 +27,222 @@
         <section>
           <div class="container">
             <h3>오늘의 할일</h3>
-            <ul>
+            <ol>
               <li>
-                [OSX] homebrew 설치
+                <div>git 설치</div>
+                <div style="display: flex">
+                  <iframe
+                    style="aspect-ratio: 560 / 315; width: 50%"
+                    src="https://www.youtube.com/embed/qzbaU5elQlQ?si=511p3F9KnnRdotSJ"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                  <iframe
+                    style="aspect-ratio: 560 / 315; width: 50%"
+                    src="https://www.youtube.com/embed/jWQekYBbz9w?si=O4zRJtBhAx-VSELH"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                </div>
                 <ul>
                   <li>
-                    <a href="https://brew.sh/">brew.sh</a>
-                    에서 인스톨 커맨드를 복사
-                  </li>
-                  <li>터미널을 실행해 커맨드를 붙여넣고 엔터</li>
-                  <li>
-                    설치 완료 후
-                    <code class="language-PowerShell">brew --version</code>
-                    이라 입력했을 때,
-                    <code class="language-PowerShell">
-                      zsh: command not found: brew
-                    </code>
-                    와 유사한 에러 문구가 뜨면, 아래 단계로 넘어가 조치를
-                    취하고, 그렇지 않다면 아래 단계를 무시하고 git 설치로
-                    넘어간다.
+                    <a href="https://git-scm.com/">git-scm.com</a>
                   </li>
                   <li>
-                    터미널의 내용 중
-                    <pre
-                      class="language-PowerShell line-numbers"><code>==> Next Steps:
+                    WIN
+                    <ol>
+                      <li>더 이상의 자세한 설명은 생략한다.</li>
+                    </ol>
+                  </li>
+                  <li>
+                    MAC OS
+                    <ol>
+                      <li>
+                        homebrew 설치
+                        <ol>
+                          <li>
+                            <a href="https://brew.sh/">brew.sh</a>
+                            에서 인스톨 커맨드를 복사
+                          </li>
+                          <li>
+                            터미널에 커맨드를 입력: 붙여넣고 엔터 -> 설치시작
+                          </li>
+                          <li>설치과정은 알아서 잘</li>
+                          <li>
+                            설치 완료 후
+                            <code class="language-PowerShell">
+                              brew --version
+                            </code>
+                            이라 입력했을 때,
+                            <code class="language-PowerShell">
+                              zsh: command not found: brew
+                            </code>
+                            와 유사한 에러 문구가 뜨면, 아래 단계로, 그렇지
+                            않다면 아래 단계를 무시하고 git 설치로.
+                          </li>
+                          <li>
+                            터미널의 내용 중
+                            <pre
+                              class="language-PowerShell line-numbers"><code>==> Next Steps:
 Run these two commands in tour terminal to add Homebrew to your PATH:
 (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/사용자명/.zprofile
 eval "$(opt/homevrew/bin/brew shellenv)"</code></pre>
-                    를 찾아 3번째 라인을 복사, 붙여넣고 엔터. 4번째 라인을 복사,
-                    붙여넣고 엔터한다.
-                    <strong>
-                      위의 코드를 복사-붙여넣기하라는 것이 아니다. 여러분의
-                      터미널에서 위 내용을 찾아 복사-붙여넣기하라는 것이다.
-                    </strong>
+                            를 찾아 3번째 라인을 복사, 입력. 4번째 라인을 복사,
+                            입력.
+                            <strong>
+                              위의 코드를 복사-입력하라는 것이 아니다. 여러분의
+                              터미널에서 위 내용을 찾아 복사-입력하라는 것이다.
+                            </strong>
+                          </li>
+                          <li>
+                            다시
+                            <code class="language-PowerShell">
+                              brew --version
+                            </code>
+                            이라 입력했을 때,
+                            <code class="language-PowerShell">
+                              zsh: command not found: brew
+                            </code>
+                            와 유사한 에러 문구가 안뜨면 설치가 완료된 것이다.
+                            에러 문구가 뜨면? 몰?루?
+                          </li>
+                        </ol>
+                      </li>
+                      <li>
+                        git 설치
+                        <ol>
+                          <li>
+                            터미널에
+                            <code class="language-PowerShell">
+                              brew install git
+                            </code>
+                            이라 입력
+                          </li>
+                          <li>더 이상의 자세한 설명은 생략한다.</li>
+                        </ol>
+                      </li>
+                    </ol>
                   </li>
                 </ul>
               </li>
-
               <li>
-                git 설치
-                <ul>
+                node.js 설치
+                <ol>
                   <li>
-                    <a href="https://git-scm.com/"></a>
+                    <a href="https://nodejs.org">node.js</a>
                   </li>
-                </ul>
+                  <li>LTS 버전 설치</li>
+                  <li>더 이상의 자세한 설명은 생략한다.</li>
+                </ol>
               </li>
-              <li>vscode 설치</li>
-              <li>node.js 설치</li>
-              <li>github 가입</li>
-              <li>템플릿 다운로드</li>
+              <li>
+                github 가입
+                <ol>
+                  <li>
+                    <a href="https://github.com">github.com</a>
+                  </li>
+                  <li>
+                    이하의 사항에 유의하여 가입
+                    <ul>
+                      <li>
+                        username은 아이디와 같은 역할을 한다. 따라서 다른 사람과
+                        같을 수 없다. 다음에 주의하여 username을 만든다.
+                        <strong>
+                          이는 앞으로 파일이름이나 variable 이름을 만들 때도
+                          마찬가지니 잘 기억하고 습관화하자.
+                        </strong>
+                        <ol>
+                          <li>
+                            <strong>-</strong>
+                            (하이픈 혹은 대쉬라 부르는) 것으로 시작하거나 끝내지
+                            않는다.
+                          </li>
+                          <li>
+                            <strong>오직 영문과 숫자만</strong>
+                            사용한다.
+                          </li>
+                          <li>
+                            당연히
+                            <strong>`~!@#$%^&*()=+&lt;&gt;,./?\|[]{}"'</strong>
+                            를 포함한 특수문자는
+                            <strong>사용하지 않는다.</strong>
+                          </li>
+                          <li>
+                            사용할 수 있는 특수문자는
+                            <strong>-</strong>
+                            와
+                            <strong>_</strong>
+                            로, 띄어쓰기를 대신해 사용된다.
+                          </li>
+                          <li>
+                            그렇다.
+                            <strong>띄어쓰기를 사용하면 안된다.</strong>
+                          </li>
+                          <li>
+                            대문자도, 소문자도 사용할 수 있지만
+                            <strong>대문자와 소문자를 구분한다.</strong>
+                            (app≠apP≠aPp≠App≠ApP≠APp≠APP) 그러니
+                            <strong>
+                              띄어쓰기 구분을 제외하면 대문자를 사용하지 말자.
+                            </strong>
+                          </li>
+                          <li>
+                            그렇다. 띄어쓰기 구분을 목적으로 대문자를 쓰는건
+                            괜찮다. (applePenPineapplePen)
+                            <ul>
+                              <li>
+                                프로그래밍에서 띄어쓰기 처리 방법들
+                                <dl>
+                                  <dt>Camel Case</dt>
+                                  <dd>applePenPineapplePen</dd>
+                                  <dd>JS를 포함한 대부분의 언어에서</dd>
+                                </dl>
+                                <dl>
+                                  <dt>Kebab Case</dt>
+                                  <dd>apple-pen-pineapple-pen</dd>
+                                  <dd>HTML과 CSS에서</dd>
+                                </dl>
+                                <dl>
+                                  <dt>Snake Case</dt>
+                                  <dd>apple_pen_pineapple_pen</dd>
+                                  <dd>
+                                    variable이 아닌 constant 이름에. 더 정확히
+                                    constant를 표현할 때는 모두 대문자로 쓰는
+                                    경우가 많다. APPLE_PEN_PINEAPPLE_PEN
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dt>Pascal Case</dt>
+                                  <dd>ApplePenPineapplePen</dd>
+                                  <dd>Class 이름에</dd>
+                                </dl>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            (사실 그럴 필요는 없지만) 숫자로 시작하지 않는다
+                          </li>
+                        </ol>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>더 이상의 자세한 설명은 생략한다.</li>
+                </ol>
+              </li>
+              <li>
+                수강생 Template 다운로드
+                <ol>
+                  <li>
+                    <a href="https://github.com">github.com</a>
+                  </li>
+                  <li></li>
+                </ol>
+              </li>
               <li>vscode 세팅</li>
               <li>github 페이지 만들기</li>
-            </ul>
+            </ol>
           </div>
         </section>
         <section>
