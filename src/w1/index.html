@@ -27,8 +27,50 @@
           <div class="container">
             <h3>오늘의 할일</h3>
             <ul>
-              <li>homebrew 설치</li>
-              <li>git 설치</li>
+              <li>
+                [OSX] homebrew 설치
+                <ul>
+                  <li>
+                    <a href="https://brew.sh/">brew.sh</a>
+                    에서 인스톨 커맨드를 복사
+                  </li>
+                  <li>터미널을 실행해 커맨드를 붙여넣고 엔터</li>
+                  <li>
+                    설치 완료 후
+                    <code class="language-PowerShell">brew --version</code>
+                    이라 입력했을 때,
+                    <code class="language-PowerShell">
+                      zsh: command not found: brew
+                    </code>
+                    와 유사한 에러 문구가 뜨면, 아래 단계로 넘어가 조치를
+                    취하고, 그렇지 않다면 아래 단계를 무시하고 git 설치로
+                    넘어간다.
+                  </li>
+                  <li>
+                    터미널의 내용 중
+                    <pre
+                      class="language-PowerShell line-numbers"><code>==> Next Steps:
+Run these two commands in tour terminal to add Homebrew to your PATH:
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/사용자명/.zprofile
+eval "$(opt/homevrew/bin/brew shellenv)"</code></pre>
+                    를 찾아 3번째 라인을 복사, 붙여넣고 엔터. 4번째 라인을 복사,
+                    붙여넣고 엔터한다.
+                    <strong>
+                      위의 코드를 복사-붙여넣기하라는 것이 아니다. 여러분의
+                      터미널에서 위 내용을 찾아 복사-붙여넣기하라는 것이다.
+                    </strong>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                git 설치
+                <ul>
+                  <li>
+                    <a href="https://git-scm.com/"></a>
+                  </li>
+                </ul>
+              </li>
               <li>vscode 설치</li>
               <li>node.js 설치</li>
               <li>github 가입</li>
@@ -43,8 +85,7 @@
             <h6>settings.json</h6>
             <pre
               class="line-numbers"
-              data-src="./data/settings.json"
-              data-line="3-8"
+              data-src="./assets/settings.json"
               data-download-link></pre>
           </div>
         </section>

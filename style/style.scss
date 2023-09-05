@@ -125,6 +125,11 @@ canvas {
   height: 100dvh;
 }
 
+strong {
+  font-weight: 700;
+  color: color.get-color-from-role('tertiary');
+}
+
 .container {
   @include layout.lt-bp('lg') {
     padding-block: map.get(layout.$container-py, 'lg');
@@ -151,14 +156,14 @@ canvas {
 .table,
 .grid {
   display: grid;
-  grid-template-columns: repeat(1, max-content) minmax(15.5ch, 1fr);
+  grid-template-columns: repeat(1, max-content) minmax(15.5ch, 31ch);
   row-gap: 0.5em;
   column-gap: 1.5em;
 
   &--col {
     @for $i from 3 through 8 {
       &-#{$i} {
-        grid-template-columns: repeat($i - 1, max-content) minmax(15.5ch, 1fr);
+        grid-template-columns: repeat($i - 1, max-content) minmax(15.5ch, 31ch);
       }
     }
   }

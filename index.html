@@ -16,7 +16,13 @@
         <section>
           <div class="container">
             <h1>Interactive Media Design 23-2</h1>
-            <div class="grid">
+            <div
+              class="grid"
+              style="
+                grid-template-columns:
+                  max-content
+                  minmax(15.5ch, 62ch);
+              ">
               <div class="header">강의실</div>
               <div>한누리관 110호 (I110)</div>
               <div class="header">강의시간</div>
@@ -66,7 +72,10 @@
               </div>
               <div class="header">강의준비물</div>
               <div>
-                <div>랩탑</div>
+                <div>
+                  랩탑 (강의 중 여러분의 노트북을 직접 만질 수도 있으니
+                  입력장치를 청결히 해오길 바랍니다.)
+                </div>
                 <div>종이와 펜 (타블렛과 스타일러스도 허용)</div>
               </div>
               <div class="header">참고자료</div>
@@ -104,86 +113,109 @@
         <section>
           <div class="container">
             <h3>강의 일정</h3>
-            <div class="table table--col-5 table--numbering">
+            <div
+              class="table table--numbering"
+              style="
+                grid-template-columns:
+                  max-content
+                  max-content
+                  minmax(15.5ch, 62ch)
+                  minmax(15.5ch, 62ch)
+                  minmax(15.5ch, 62ch);
+              ">
               <div class="header">주차</div>
               <div class="header">수업일자</div>
               <div class="header">수업내용</div>
               <div class="header">과제</div>
               <div class="header">비고</div>
+
               <div class="number"></div>
               <div>09-04</div>
               <div><a href="./src/w1/index.html">수업소개와 준비</a></div>
               <div></div>
               <div></div>
+
               <div class="number"></div>
               <div>09-11</div>
               <div><a href="">Javascript 기본</a></div>
-              <div>개인 github 페이지 개설</div>
               <div></div>
+              <div></div>
+
               <div class="number"></div>
               <div>09-18</div>
               <div><a href="">Vector</a></div>
-              <div>소과제1</div>
+              <div>개인 github 페이지 개설</div>
               <div></div>
+
               <div class="number"></div>
               <div>09-25</div>
               <div><a href="">Force</a></div>
-              <div>소과제2</div>
+              <div>소과제1 - Vector</div>
               <div></div>
+
               <div class="number"></div>
               <div>10-02</div>
               <div><a href="">Oscilation</a></div>
-              <div></div>
-              <div>추석-대체공휴일: 영상수업</div>
+              <div>소과제2 - Force</div>
+              <div>대체공휴일: 영상수업</div>
+
               <div class="number"></div>
               <div>10-09</div>
               <div><a href="">Particle System</a></div>
-              <div>소과제3</div>
+              <div>소과제3 - Oscilation</div>
               <div>한글날: 영상수업</div>
+
               <div class="number"></div>
               <div>10-16</div>
               <div><a href="">Autonomous Agents</a></div>
-              <div>소과제4</div>
+              <div>소과제4 - Particle System</div>
               <div></div>
+
               <div class="number"></div>
               <div>10-23</div>
-              <div><a href="">중간고사 대체 프로젝트 발표</a></div>
+              <div><a href="">DOM and Event</a></div>
+              <div>소과제5 - Autonomouse Agents</div>
               <div></div>
-              <div></div>
+
               <div class="number"></div>
               <div>10-30</div>
               <div><a href="">Physics Libraries</a></div>
+              <div>소과제6 - DOM and Event</div>
               <div></div>
-              <div></div>
+
               <div class="number"></div>
               <div>11-06</div>
               <div><a href="">Fractals and Cellular Automata</a></div>
-              <div>소과제5</div>
+              <div>소과제7 - Phisics Libraries</div>
               <div></div>
+
               <div class="number"></div>
               <div>11-13</div>
               <div><a href="">Evolutionary Computing</a></div>
-              <div>소과제6</div>
+              <div>소과제8 - Fractals and Cellular Automata</div>
               <div></div>
+
               <div class="number"></div>
               <div>11-20</div>
               <div><a href="">Neural Networks</a></div>
-              <div>소과제7</div>
+              <div>소과제9 - Evolutionary Computing</div>
               <div></div>
+
               <div class="number"></div>
               <div>11-27</div>
               <div><a href="">기말고사 대체 프로젝트 제안</a></div>
-              <div>소과제8</div>
+              <div>소과제10 - Neutal Networks</div>
               <div></div>
+
               <div class="number"></div>
               <div>12-04</div>
               <div><a href="">개인 튜토리얼</a></div>
               <div></div>
               <div></div>
+
               <div class="number"></div>
               <div>12-18</div>
               <div><a href="">기말고사 대체 프로젝트 발표</a></div>
-              <div></div>
               <div></div>
             </div>
           </div>
@@ -191,7 +223,14 @@
         <section>
           <div class="container">
             <h3>성적 산출 방식</h3>
-            <div class="table table--col-3 table--numbering">
+            <div
+              class="table table--numbering"
+              style="
+                grid-template-columns:
+                  max-content
+                  max-content
+                  minmax(15.5ch, 62ch);
+              ">
               <div class="header">항목</div>
               <div class="header">배점</div>
               <div class="header">비고</div>
@@ -206,13 +245,14 @@
                 <div>점수가 음수가 될 경우 = 성적 F</div>
               </div>
               <div class="header">소과제</div>
-              <div>30</div>
-              <div></div>
-              <div class="header">중간고사 대체 프로젝트</div>
-              <div>20</div>
-              <div>미제출 = 성적 F</div>
+              <div>40</div>
+              <div>
+                <div>각 4점</div>
+                <div>기본 과제 성공 = 2점</div>
+                <div>고급 과제 성공 = 4점</div>
+              </div>
               <div class="header">기말고사 대체 프로젝트</div>
-              <div>20</div>
+              <div>30</div>
               <div>미제출 = 성적 F</div>
               <div class="header">수업 중 질문에 대한 답변</div>
               <div>10</div>
@@ -287,7 +327,7 @@
               인정하려고만 한다면 이러한 문제 중 상당수를 피할 수 있습니다.
             </p>
             <p>
-              디자인 경험의 핵심은 학생들이 독창적인 학문적, 예술적 작품을
+              디자인 교육 경험의 핵심은 학생들이 독창적인 학문적, 예술적 작품을
               창작하여 교수진의 비판적 검토를 받는 것입니다. 따라서 학생들은
               적절한 건설적인 비판과 조언을 받기 위해 항상 자신의 현재 능력과
               지식에 대한 정확한 정보를 교수진에게 제공해야합니다. 표절이나

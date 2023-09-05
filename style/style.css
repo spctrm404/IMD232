@@ -191,6 +191,11 @@ canvas {
   background-color: oklch(60% 0 0/1);
 }
 
+strong {
+  font-weight: 700;
+  color: oklch(80% 0.135 300/1);
+}
+
 .container {
   box-sizing: content-box;
   max-width: 60rem;
@@ -220,34 +225,34 @@ canvas {
 .table,
 .grid {
   display: grid;
-  grid-template-columns: repeat(1, max-content) minmax(15.5ch, 1fr);
+  grid-template-columns: repeat(1, max-content) minmax(15.5ch, 31ch);
   row-gap: 0.5em;
   -moz-column-gap: 1.5em;
        column-gap: 1.5em;
 }
 .table--col-3,
 .grid--col-3 {
-  grid-template-columns: repeat(2, max-content) minmax(15.5ch, 1fr);
+  grid-template-columns: repeat(2, max-content) minmax(15.5ch, 31ch);
 }
 .table--col-4,
 .grid--col-4 {
-  grid-template-columns: repeat(3, max-content) minmax(15.5ch, 1fr);
+  grid-template-columns: repeat(3, max-content) minmax(15.5ch, 31ch);
 }
 .table--col-5,
 .grid--col-5 {
-  grid-template-columns: repeat(4, max-content) minmax(15.5ch, 1fr);
+  grid-template-columns: repeat(4, max-content) minmax(15.5ch, 31ch);
 }
 .table--col-6,
 .grid--col-6 {
-  grid-template-columns: repeat(5, max-content) minmax(15.5ch, 1fr);
+  grid-template-columns: repeat(5, max-content) minmax(15.5ch, 31ch);
 }
 .table--col-7,
 .grid--col-7 {
-  grid-template-columns: repeat(6, max-content) minmax(15.5ch, 1fr);
+  grid-template-columns: repeat(6, max-content) minmax(15.5ch, 31ch);
 }
 .table--col-8,
 .grid--col-8 {
-  grid-template-columns: repeat(7, max-content) minmax(15.5ch, 1fr);
+  grid-template-columns: repeat(7, max-content) minmax(15.5ch, 31ch);
 }
 .table--numbering,
 .grid--numbering {
