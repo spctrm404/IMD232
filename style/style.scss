@@ -83,7 +83,7 @@ p {
   @include typography.get-type-from-role('body');
 
   max-width: 93ch;
-  margin-block: 0.5em;
+  margin-block: 1em;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
@@ -100,16 +100,16 @@ a {
 ul,
 ol,
 dl {
-  margin-block: 0.5em;
+  margin-block: 1em;
 }
 
 ul,
 ol {
   padding-left: 2em;
+}
 
-  > * {
-    margin-block: 0.5em;
-  }
+li {
+  margin-block: 0.5em;
 }
 
 dt {
@@ -117,7 +117,11 @@ dt {
 }
 
 dd {
+  margin-block: 0.5em;
   margin-left: 2em;
+}
+
+code {
 }
 
 img,
@@ -201,8 +205,8 @@ strong {
     counter-increment: table-counter;
   }
 
-  > * {
-    margin-block: 0.25em;
+  > * > * + * {
+    margin-top: 0.5em;
   }
 }
 

@@ -129,7 +129,7 @@ p {
   font-size: 1.125rem;
   line-height: 2rem;
   max-width: 93ch;
-  margin-block: 0.5em;
+  margin-block: 1em;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
@@ -158,15 +158,15 @@ a:visited {
 ul,
 ol,
 dl {
-  margin-block: 0.5em;
+  margin-block: 1em;
 }
 
 ul,
 ol {
   padding-left: 2em;
 }
-ul > *,
-ol > * {
+
+li {
   margin-block: 0.5em;
 }
 
@@ -175,6 +175,7 @@ dt {
 }
 
 dd {
+  margin-block: 0.5em;
   margin-left: 2em;
 }
 
@@ -285,9 +286,9 @@ strong {
   content: counter(table-counter);
   counter-increment: table-counter;
 }
-.table > *,
-.grid > * {
-  margin-block: 0.25em;
+.table > * > * + *,
+.grid > * > * + * {
+  margin-top: 0.5em;
 }
 
 .table {
