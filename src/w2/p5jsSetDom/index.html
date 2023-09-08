@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>p5.js</title>
+    <title>p5 to Specific DOM</title>
     <link
       href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
       rel="stylesheet"
@@ -15,20 +15,22 @@
     <script src="../../../plugin/prism/prism.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/p5@latest/lib/p5.js"></script>
-    <script src="./script/sketch.js"></script>
+    <script src="./script/sketch.js" defer></script>
   </head>
   <body>
     <div class="viewport">
       <header>
         <section>
           <div class="container">
-            <h1>p5.js</h1>
+            <h1>p5 to Specific DOM</h1>
           </div>
         </section>
       </header>
       <main>
         <section>
-          <div class="container"></div>
+          <div class="container">
+            <div id="p5GoesHere"></div>
+          </div>
         </section>
         <section>
           <div class="container">
@@ -38,12 +40,13 @@
               class="line-numbers"
               data-src="./index.html"
               data-download-link
-              data-line="17-18"></pre>
+              data-line="18"></pre>
             <h6>sketch.js</h6>
             <pre
               class="line-numbers"
               data-src="./script/sketch.js"
-              data-download-link></pre>
+              data-download-link
+              data-line="2-5"></pre>
           </div>
         </section>
       </main>

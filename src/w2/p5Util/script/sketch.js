@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(500, 500);
+  setCanvasContainer('p5GoesHere', 3, 2, true);
 }
 
 function draw() {
