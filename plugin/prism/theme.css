@@ -19,16 +19,21 @@ pre[class*=language-] {
   background: oklch(17% 0 0/1);
 }
 
+:not(pre) > code[class*=language-] {
+  padding-block: 0.125em;
+  padding-inline: 0.5em;
+}
+
 .token.block-comment,
 .token.cdata,
 .token.comment,
 .token.doctype,
 .token.prolog {
-  color: oklch(80% 0.0125 0/1);
+  color: oklch(80% 0.00625 0/1);
 }
 
 .token.punctuation {
-  color: oklch(80% 0.0125 0/1);
+  color: oklch(80% 0.00625 0/1);
 }
 
 .token.attr-name,

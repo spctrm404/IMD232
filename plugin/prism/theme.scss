@@ -32,6 +32,11 @@ pre[class*='language-'] {
   background: color.get-color-from-role('surface-container-high');
 }
 
+:not(pre) > code[class*='language-'] {
+  padding-block: 0.125em;
+  padding-inline: 0.5em;
+}
+
 .token.block-comment,
 .token.cdata,
 .token.comment,

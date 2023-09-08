@@ -179,6 +179,15 @@ dd {
   margin-left: 2em;
 }
 
+code:not([class]) {
+  padding-block: 0.125em;
+  padding-inline: 0.5em;
+  border-radius: 0;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  background: oklch(17% 0 0/1);
+  color: oklch(90% 0 0/1);
+}
+
 img,
 video,
 svg,

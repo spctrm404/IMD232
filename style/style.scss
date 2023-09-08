@@ -121,7 +121,13 @@ dd {
   margin-left: 2em;
 }
 
-code {
+code:not([class]) {
+  padding-block: 0.125em;
+  padding-inline: 0.5em;
+  border-radius: 0;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  background: color.get-color-from-role('surface-container-high');
+  color: color.get-color-from-role('on-surface');
 }
 
 img,
