@@ -175,25 +175,30 @@ dt {
 }
 
 dd {
-  margin-block: 0.5em;
   margin-left: 2em;
+  margin-block: 0.5em;
 }
 
 code:not([class]) {
   padding-block: 0.125em;
   padding-inline: 0.5em;
-  border-radius: 0;
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  background: oklch(17% 0 0/1);
   color: oklch(90% 0 0/1);
+  background: oklch(17% 0 0/1);
+  border-radius: 0;
 }
 
+figure,
 img,
-video,
 svg,
-canvas {
+canvas,
+video {
   display: block;
   max-width: 100%;
+}
+
+figure {
+  margin: 0;
 }
 
 .viewport {
