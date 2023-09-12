@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setting VSCode</title>
+    <link
+      href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css" />
+    <link rel="stylesheet" href="../../../style/style.css" />
+
+    <link rel="stylesheet" href="../../../plugin/prism/prism.css" />
+    <link rel="stylesheet" href="../../../plugin/prism/theme.css" />
+    <script src="../../../plugin/prism/prism.js" defer></script>
+  </head>
+  <body>
+    <div class="viewport">
+      <header>
+        <section>
+          <div class="container">
+            <h1>Setting VSCode</h1>
+          </div>
+        </section>
+      </header>
+      <main>
+        <section>
+          <div class="container">
+            <h4>링크</h4>
+            <a href="https://github.com/settings/emails">
+              GitHub - Email Settings
+            </a>
+            <h4>공통</h4>
+            <ol>
+              <li>
+                위 링크: GitHub의 Email Settings에 접속. 로그인을 요구하면
+                로그인한다.
+              </li>
+              <li>
+                <strong>Primary email address</strong>
+                혹은
+                <strong>Keep my email addresses private</strong>
+                을 에 적혀있는
+                <code>숫자+본인아이디@users.noreply.github.com</code>
+                를 찾아 복사해둔다. 이를
+                <strong>깃허브이메일</strong>
+                이라 부르겠다.
+              </li>
+              <li>
+                <strong>Your personal account</strong>
+                라 적혀있는 바로 위 괄호로 감싸진 글자: 본인의 아이디를 찾아
+                복사해둔다. 이를
+                <strong>깃허브아이디</strong>
+                라 부르겠다.
+              </li>
+              <li>
+                위 두 과정에서 앞 뒤로 띄어쓰기가 포함되어 복사-붙여넣기되지
+                않도록 주의한다.
+              </li>
+            </ol>
+            <h4>WIN</h4>
+            <ol>
+              <li>
+                시작에서
+                <code>git cmd</code>
+                를 타이핑해 git bash를 찾아 실행한다.
+              </li>
+            </ol>
+            <h4>MAC OS</h4>
+            <ol>
+              <li>터미널을 실행한다.</li>
+            </ol>
+            <h4>공통</h4>
+            <ol>
+              <li>
+                git bash 혹은 터미널에 다음과 같이 입력한다.
+                <br />
+                <code>git config --global user.name "깃허브아이디"</code>
+              </li>
+              <li>
+                git bash 혹은 터미널에 다음과 같이 입력한다.
+                <br />
+                <code>git config --global user.email 깃허브이메일</code>
+              </li>
+              <li>
+                git bash 혹은 터미널에 다음과 같이 입력했을 때, user.name에
+                깃허브아이디, user.email에 깃허브이메일이 보인다면 제대로 입력된
+                것이다.
+                <br />
+                <code>git config --list</code>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <section>
+          <div class="container"></div>
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>

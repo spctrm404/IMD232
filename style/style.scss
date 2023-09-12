@@ -123,12 +123,12 @@ dd {
 
 code:not([class]) {
   padding-block: 0.125em;
-  padding-inline: 0.5em;
+  padding-inline: 0.25em;
 
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   color: color.get-color-from-role('on-surface');
 
-  background: color.get-color-from-role('surface-container-high');
+  background: color.get-color-from-role('surface-variant');
   border-radius: 0;
 }
 

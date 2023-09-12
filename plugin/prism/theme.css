@@ -16,7 +16,7 @@ pre[class*=language-]::-webkit-scrollbar-thumb {
 
 :not(pre) > code[class*=language-],
 pre[class*=language-] {
-  background: oklch(17% 0 0/1);
+  background: oklch(30% 0 0/1);
 }
 
 :not(pre) > code[class*=language-] {
@@ -137,4 +137,4 @@ div.code-toolbar > .toolbar > .toolbar-item > span:focus,
 div.code-toolbar > .toolbar > .toolbar-item > span:hover {
   color: oklch(20% 0.09 0/1);
   background: color-mix(in oklch, oklch(80% 0.135 0/1), oklch(20% 0.09 0/1) 8%);
-}/*# sourceMappingURL=theme.css.map */
+}

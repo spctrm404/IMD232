@@ -29,7 +29,7 @@ pre[class*='language-'] {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  background: color.get-color-from-role('surface-container-high');
+  background: color.get-color-from-role('surface-variant');
 }
 
 :not(pre) > code[class*='language-'] {
