@@ -15,79 +15,77 @@
     <script src="../../../plugin/prism/prism.js" defer></script>
   </head>
   <body>
-    <div class="viewport">
-      <header>
-        <section>
-          <div class="container">
-            <h1>Install Git</h1>
-          </div>
-        </section>
-      </header>
-      <main>
-        <section>
-          <div class="container">
-            <h4>링크</h4>
-            <p>
-              <a href="https://git-scm.com/" target="_blank">git-scm.com</a>
-            </p>
-            <h4>WIN</h4>
-            <p>더 이상의 자세한 설명은 생략한다.</p>
-            <h4>MAC OS</h4>
-            <h6>homebrew 설치</h6>
-            <ol>
-              <li>
-                <a href="https://brew.sh/" target="_blank">brew.sh</a>
-                에서 인스톨 커맨드를 복사.
-              </li>
-              <li>터미널에 커맨드를 입력: 붙여넣고 엔터 = 설치시작.</li>
-              <li>설치과정은 알아서 잘.</li>
-              <li>
-                설치 완료 후 터미널에
-                <code>brew --version</code>
-                이라 입력했을 때,
-                <code>zsh: command not found: brew</code>
-                와 유사한 에러 문구가 뜨면, 아래 단계로, 그렇지 않다면 아래
-                단계를 무시하고 git 설치로.
-              </li>
-              <li>
-                터미널의 내용 중
-                <pre
-                  class="language-PowerShell line-numbers"><code>==> Next Steps:
+    <header>
+      <section>
+        <div class="container">
+          <h1>Install Git</h1>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section>
+        <div class="container">
+          <h4>링크</h4>
+          <p>
+            <a href="https://git-scm.com/" target="_blank">git-scm.com</a>
+          </p>
+          <h4>WIN</h4>
+          <p>더 이상의 자세한 설명은 생략한다.</p>
+          <h4>MAC OS</h4>
+          <h6>homebrew 설치</h6>
+          <ol>
+            <li>
+              <a href="https://brew.sh/" target="_blank">brew.sh</a>
+              에서 인스톨 커맨드를 복사.
+            </li>
+            <li>터미널에 커맨드를 입력: 붙여넣고 엔터 = 설치시작.</li>
+            <li>설치과정은 알아서 잘.</li>
+            <li>
+              설치 완료 후 터미널에
+              <code>brew --version</code>
+              이라 입력했을 때,
+              <code>zsh: command not found: brew</code>
+              와 유사한 에러 문구가 뜨면, 아래 단계로, 그렇지 않다면 아래 단계를
+              무시하고 git 설치로.
+            </li>
+            <li>
+              터미널의 내용 중
+              <pre
+                class="language-PowerShell line-numbers"><code>==> Next Steps:
 Run these two commands in tour terminal to add Homebrew to your PATH:
 (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/사용자명/.zprofile
 eval "$(opt/homebrew/bin/brew shellenv)"</code></pre>
-                를 찾아 3번째 라인을 복사, 입력. 4번째 라인을 복사, 입력.
-                <strong>
-                  위의 코드를 복사-입력하라는 것이 아니다. 여러분의 터미널에서
-                  위 내용을 찾아 복사-입력하라는 것이다.
-                </strong>
-              </li>
-              <li>
-                다시
-                <code>brew --version</code>
-                이라 입력했을 때,
-                <code>zsh: command not found: brew</code>
-                와 유사한 에러 문구가 안뜨면 설치가 완료된 것이다. 에러 문구가
-                뜨면? 몰?루?
-              </li>
-            </ol>
-            <h6>git 설치</h6>
-            <ol>
-              <li>
-                터미널에
-                <code>brew install git</code>
-                이라 입력.
-              </li>
-              <li>더 이상의 자세한 설명은 생략한다.</li>
-            </ol>
-          </div>
-        </section>
-      </main>
-      <footer>
-        <section>
-          <div class="container"></div>
-        </section>
-      </footer>
-    </div>
+              를 찾아 3번째 라인을 복사, 입력. 4번째 라인을 복사, 입력.
+              <strong>
+                위의 코드를 복사-입력하라는 것이 아니다. 여러분의 터미널에서 위
+                내용을 찾아 복사-입력하라는 것이다.
+              </strong>
+            </li>
+            <li>
+              다시
+              <code>brew --version</code>
+              이라 입력했을 때,
+              <code>zsh: command not found: brew</code>
+              와 유사한 에러 문구가 안뜨면 설치가 완료된 것이다. 에러 문구가
+              뜨면? 몰?루?
+            </li>
+          </ol>
+          <h6>git 설치</h6>
+          <ol>
+            <li>
+              터미널에
+              <code>brew install git</code>
+              이라 입력.
+            </li>
+            <li>더 이상의 자세한 설명은 생략한다.</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section>
+        <div class="container"></div>
+      </section>
+    </footer>
   </body>
 </html>

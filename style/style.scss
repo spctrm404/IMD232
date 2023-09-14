@@ -35,8 +35,9 @@ body {
   }
 
   @include typography.get-type-from-role('body');
+  @include scrollbar;
 
-  overflow: hidden;
+  overflow: auto;
 
   margin: 0;
 
@@ -143,14 +144,6 @@ video {
 
 figure {
   margin: 0;
-}
-
-.viewport {
-  @include scrollbar;
-
-  overflow-x: hidden;
-  overflow-y: auto;
-  height: 100dvh;
 }
 
 strong {

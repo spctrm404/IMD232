@@ -1,10 +1,15 @@
+// 공의 위치를 나타낼 변수
 let x;
 let y;
+// 목표 위치 설정시점의 공의 위치를 저장할 변수
 let originX;
 let originY;
+// 목표 위치를 저장할 변수
 let targetX;
 let targetY;
+// 목표 위치 설정 시점을 저장할 변수
 let interpolationBegin = 0;
+// 이동 시간
 const interpolationDuration = 60 * 1;
 
 function setup() {

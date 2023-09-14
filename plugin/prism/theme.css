@@ -1,6 +1,6 @@
 code[class*=language-],
 pre[class*=language-] {
-  color: oklch(90% 0 0/1);
+  color: oklch(80% 0.00625 0/1);
 }
 
 pre[class*=language-]::-webkit-scrollbar {
@@ -33,7 +33,7 @@ pre[class*=language-] {
 }
 
 .token.punctuation {
-  color: oklch(90% 0 0/1);
+  color: oklch(80% 0.00625 0/1);
 }
 
 .token.attr-name,
@@ -104,11 +104,11 @@ pre[id].linkable-line-numbers span.line-numbers-rows > span:hover::before {
 }
 
 .line-numbers .line-numbers-rows {
-  border-color: oklch(30% 0.00625 0/1);
+  border-color: oklch(60% 0 0/1);
 }
 
 .line-numbers-rows > span::before {
-  color: oklch(30% 0.00625 0/1);
+  color: oklch(60% 0 0/1);
 }
 
 div.code-toolbar > .toolbar > .toolbar-item + .toolbar-item {

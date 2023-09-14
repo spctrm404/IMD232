@@ -5,11 +5,12 @@
 
 //Modified by OO-SUNG SON (spctrm404)
 
-// Variables for position and speed of ball.
+// 공의 위치
 let x = 100;
 let y = 100;
-let speedX = 2.5;
-let speedY = 2;
+// 공의 속력
+let velocityX = 2.5;
+let velocityY = 2;
 
 function setup() {
   setCanvasContainer('canvas', 3, 2, true);
@@ -19,21 +20,22 @@ function setup() {
 function draw() {
   background(255);
 
-  // Move the ball according to its speed.
-  x = x + speedX;
-  y = y + speedY;
+  // 매 프레임 공의 위치에 공의 속도를 더해 이동
+  x += velocityX;
+  y += velocityY;
 
-  // Check for bouncing.
+  // 공이 화면을 벗어나는지: 충돌하는지 확인
+  // 속도에 -1을 곱해 뒤집는다.
   if (x > width || x < 0) {
-    speedX = speedX * -1;
+    velocityX *= -1;
   }
   if (y > height || y < 0) {
-    speedY = speedY * -1;
+    velocityY *= -1;
   }
 
   stroke(0);
   fill(127);
   strokeWeight(2);
-  // Draw the ball at the position (x,y).
+  // 위치 변수를 나타낸다.
   circle(x, y, 48);
 }

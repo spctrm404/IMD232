@@ -20,7 +20,7 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-  color: color.get-color-from-role('on-surface');
+  color: color.get-color-from-role('on-surface-variant');
 }
 
 pre[class*='language-'] {
@@ -46,7 +46,7 @@ pre[class*='language-'] {
 }
 
 .token.punctuation {
-  color: color.get-color-from-role('on-surface');
+  color: color.get-color-from-role('on-surface-variant');
 }
 
 .token.attr-name,
@@ -121,11 +121,11 @@ pre[id].linkable-line-numbers span.line-numbers-rows > span:hover::before {
 }
 
 .line-numbers .line-numbers-rows {
-  border-color: color.get-color-from-role('outline-variant');
+  border-color: color.get-color-from-role('outline');
 }
 
 .line-numbers-rows > span::before {
-  color: color.get-color-from-role('outline-variant');
+  color: color.get-color-from-role('outline');
 }
 
 div.code-toolbar > .toolbar > .toolbar-item {
