@@ -65,15 +65,21 @@ class Mover {
 
   bounceEdges() {
     let bounce = -0.5;
-    if (this.position.x > width - this.radius) {
-      this.position.x = width - this.radius;
+    if (this.position.x > width - 1 - this.radius) {
+      this.position.x -= width - 1 - this.radius;
+      this.position.x *= -1;
+      this.position.x += width - 1 - this.radius;
       this.velocity.x *= bounce;
     } else if (this.position.x < this.radius) {
-      this.position.x = this.radius;
+      this.position.x -= 0 + this.radius;
+      this.position.x *= -1;
+      this.position.x += 0 + this.radius;
       this.velocity.x *= bounce;
     }
-    if (this.position.y > height - this.radius) {
-      this.position.y = height - this.radius;
+    if (this.position.y > height - 1 - this.radius) {
+      this.position.y -= height - 1 - this.radius;
+      this.position.y *= -1;
+      this.position.y += height - 1 - this.radius;
       this.velocity.y *= bounce;
     }
   }

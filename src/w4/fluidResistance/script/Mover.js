@@ -59,18 +59,24 @@ class Mover {
     );
   }
 
-  checkEdges() {
-    let bounceC = 0.9;
-    if (this.position.x > width) {
-      this.position.x = width;
-      this.velocity.x *= -1 * bounceC;
-    } else if (this.position.x < 0) {
-      this.velocity.x *= -1 * bounceC;
-      this.position.x = 0;
+  bounceEdges() {
+    let bounce = -0.5;
+    if (this.position.x > width - 1 - this.radius) {
+      this.position.x -= width - 1 - this.radius;
+      this.position.x *= -1;
+      this.position.x += width - 1 - this.radius;
+      this.velocity.x *= bounce;
+    } else if (this.position.x < this.radius) {
+      this.position.x -= 0 + this.radius;
+      this.position.x *= -1;
+      this.position.x += 0 + this.radius;
+      this.velocity.x *= bounce;
     }
-    if (this.position.y > height) {
-      this.velocity.y *= -1 * bounceC;
-      this.position.y = height;
+    if (this.position.y > height - 1 - this.radius) {
+      this.position.y -= height - 1 - this.radius;
+      this.position.y *= -1;
+      this.position.y += height - 1 - this.radius;
+      this.velocity.y *= bounce;
     }
   }
 }

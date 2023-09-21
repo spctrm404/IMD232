@@ -29,7 +29,7 @@ function draw() {
     movers[i].applyForce(gravity);
 
     movers[i].update();
-    movers[i].checkEdges();
+    movers[i].bounceEdges();
     movers[i].display();
     if (showVector) {
       movers[i].displayVectors();

@@ -59,16 +59,22 @@ class Mover {
   }
 
   checkEdges() {
-    if (this.position.x > width) {
-      this.position.x = width;
+    if (this.position.x > width - 1) {
+      this.position.x -= width - 1;
+      this.position.x *= -1;
+      this.position.x += width - 1;
       this.velocity.x *= -1;
     } else if (this.position.x < 0) {
+      this.position.x -= 0;
+      this.position.x *= -1;
+      this.position.x += 0;
       this.velocity.x *= -1;
-      this.position.x = 0;
     }
-    if (this.position.y > height) {
+    if (this.position.y > height - 1) {
+      this.position.y -= height - 1;
+      this.position.y *= -1;
+      this.position.y += height - 1;
       this.velocity.y *= -1;
-      this.position.y = height;
     }
   }
 }
