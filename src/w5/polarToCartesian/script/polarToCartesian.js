@@ -20,20 +20,16 @@ function setup() {
 function draw() {
   background(255);
 
-  // Translate the origin point to the center of the screen
   translate(width / 2, height / 2);
 
-  // Convert polar to cartesian
-  let x = rad * cos(angle);
-  let y = rad * sin(angle);
+  const x = rad * cos(angle);
+  const y = rad * sin(angle);
 
-  // Draw the ellipse at the cartesian coordinate
   fill(127);
   stroke(0);
   strokeWeight(2);
   line(0, 0, x, y);
   circle(x, y, 48);
 
-  // Increase the angle over time
   angle += angleVel;
 }

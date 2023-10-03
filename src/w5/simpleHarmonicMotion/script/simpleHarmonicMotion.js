@@ -15,7 +15,6 @@ function setup() {
 function draw() {
   background(255);
 
-  // Calculating horizontal position according to formula for simple harmonic motion
   const x = amplitude * sin((TAU * frameCount) / period);
 
   stroke(0);

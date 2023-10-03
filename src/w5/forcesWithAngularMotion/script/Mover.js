@@ -49,7 +49,6 @@ class Mover {
     strokeWeight(1);
     stroke('#ff0000');
     line(0, 0, this.vel.x * 10, this.vel.y * 10);
-    // stroke('#00ff00');
     pop();
   }
 }

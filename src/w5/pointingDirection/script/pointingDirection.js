@@ -5,7 +5,7 @@
 
 //Modified by OO-SUNG SON (spctrm404)
 
-let movers = [];
+const movers = [];
 let mouseVector;
 
 function setup() {
@@ -21,10 +21,11 @@ function draw() {
   background(255);
   mouseVector.set(mouseX, mouseY);
   movers.forEach((eachMover) => {
-    let dirForce = p5.Vector.sub(mouseVector, eachMover.pos);
+    const dirForce = p5.Vector.sub(mouseVector, eachMover.pos);
     dirForce.setMag(0.05);
     eachMover.applyForce(dirForce);
     eachMover.update();
     eachMover.display();
+    eachMover.displayVectors();
   });
 }

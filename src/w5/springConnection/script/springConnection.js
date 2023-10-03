@@ -5,10 +5,8 @@
 
 //Modified by OO-SUNG SON (spctrm404)
 
-// Mover object
 let bob;
 
-// Spring object
 let spring;
 
 let springInitL;
@@ -19,33 +17,26 @@ function setup() {
   setCanvasContainer('canvas', 2, 1, true);
 
   springInitL = height / 2;
-  springMaxL = (2 * height) / 3;
-  springMinL = height / 3;
-  // Create objects at starting position
-  // Note third argument in Spring constructor is "rest length"
-  spring = new Spring(width / 2, 10, springInitL, 0.2);
-  bob = new Bob(width / 2, 100, 24, 24);
+  springMaxL = (3 * height) / 4;
+  springMinL = height / 4;
+  spring = new Spring(width / 2, 10, springInitL, springMinL, springMaxL, 0.5);
+  bob = new Bob(width / 2, height / 2, 50, 25);
 }
 
 function draw() {
   background(255);
 
-  // Apply a gravity force to the bob
-  let gravity = createVector(0, 2);
+  let gravity = createVector(0, 1);
+  gravity.mult(bob.mass);
   bob.applyForce(gravity);
 
-  // Update bob
   bob.update();
   bob.handleDrag(mouseX, mouseY);
 
-  // Connect the bob to the spring (this calculates the force)
   spring.connect(bob);
-
-  // Constrain spring distance between min and max
   spring.constrainLength(bob, springMinL, springMaxL);
 
-  // Draw everything
-  spring.displayLine(bob); // Draw a line between spring and bob
+  spring.displayLine(bob);
   bob.display();
   spring.display();
 }

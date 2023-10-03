@@ -10,31 +10,25 @@ class Bob {
     this.pos = createVector(x, y);
     this.vel = createVector();
     this.acc = createVector();
-    this.mass = 24;
-    this.rad = 24;
-    // Arbitrary damping to simulate friction / drag
-    this.damping = 0.98;
-    // For user interaction
+    this.mass = mass;
+    this.rad = rad;
     this.dragOffset = createVector();
     this.dragging = false;
   }
 
-  // Standard Euler integration
   update() {
+    this.vel.mult(0.98);
     this.vel.add(this.acc);
-    this.vel.mult(this.damping);
     this.pos.add(this.vel);
     this.acc.mult(0);
   }
 
-  // Newton's law: F = M * A
   applyForce(force) {
     let forceDivedMass = force.copy();
     forceDivedMass.div(this.mass);
     this.acc.add(forceDivedMass);
   }
 
-  // Draw the bob
   display() {
     stroke(0);
     strokeWeight(2);
@@ -51,6 +45,7 @@ class Bob {
       this.dragging = true;
       this.dragOffset.x = this.pos.x - mx;
       this.dragOffset.y = this.pos.y - my;
+      this.vel.mult(0);
     }
   }
 

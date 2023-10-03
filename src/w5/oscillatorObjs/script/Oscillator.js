@@ -17,29 +17,28 @@ class Oscillator {
   }
 
   display() {
-    let x = sin(this.angle.x) * this.amplitude.x;
-    let y = sin(this.angle.y) * this.amplitude.y;
+    const x = sin(this.angle.x) * this.amplitude.x;
+    const y = sin(this.angle.y) * this.amplitude.y;
 
     push();
     translate(width / 2, height / 2);
     stroke(0);
     strokeWeight(2);
     fill(127);
-    // line(0, 0, x, y);
     circle(x, y, 32);
     pop();
   }
 
   displaySeparate() {
-    let x = sin(this.angle.x) * this.amplitude.x;
-    let y = sin(this.angle.y) * this.amplitude.y;
+    const x = sin(this.angle.x) * this.amplitude.x;
+    const y = sin(this.angle.y) * this.amplitude.y;
 
     push();
     translate(width / 2, height / 2);
     stroke('#0000ff');
-    line(x, -height / 2, x, -height / 2 + 10);
+    line(x, -height / 2, x, -height / 2 + 50);
     stroke('#ff0000');
-    line(-width / 2, y, -width / 2 + 10, y);
+    line(-width / 2, y, -width / 2 + 50, y);
     pop();
   }
 }

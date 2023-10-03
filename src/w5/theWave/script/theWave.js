@@ -5,25 +5,35 @@
 
 //Modified by OO-SUNG SON (spctrm404)
 
-let startAngle = 0;
-let angleVelocity = 0.2;
+let angle = 0;
+let angleStart = 0;
+let angleStartAdd = 0;
+const angleVel = 0.2;
+const amplitude = 100;
+const gap = 20;
+const rad = 10;
 
 function setup() {
   setCanvasContainer('canvas', 2, 1, true);
+  background(255);
+
+  angleStartAdd = (TAU / 360) * 1;
 }
 
 function draw() {
   background(255);
 
-  let angle = startAngle;
-  startAngle += 0.02;
+  angle = angleStart;
 
-  for (let x = 0; x <= width; x += 24) {
-    let y = map(sin(angle), -1, 1, 0, height);
-    stroke(0);
-    strokeWeight(2);
-    fill(127, 127);
-    circle(x, y, 48);
-    angle += angleVelocity;
+  stroke(0);
+  strokeWeight(2);
+  fill(127, 127);
+
+  for (let x = 0; x <= width; x += gap) {
+    let y = map(sin(angle), -1, 1, 0, height - 1);
+    circle(x, y, 2 * rad);
+    angle += angleVel;
   }
+
+  angleStart += angleStartAdd;
 }

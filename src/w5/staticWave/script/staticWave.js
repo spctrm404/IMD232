@@ -6,8 +6,10 @@
 //Modified by OO-SUNG SON (spctrm404)
 
 let angle = 0;
-let angleVel = 0.2;
-let amplitude = 100;
+const angleVel = 0.2;
+const amplitude = 100;
+const gap = 50;
+const rad = 25;
 
 function setup() {
   setCanvasContainer('canvas', 3, 2, true);
@@ -17,9 +19,9 @@ function setup() {
   strokeWeight(2);
   fill(127, 127);
 
-  for (let x = 0; x <= width; x += 24) {
+  for (let x = 0; x <= width; x += gap) {
     let y = amplitude * sin(angle);
-    circle(x, y + height / 2, 48);
+    circle(x, y + height / 2, 2 * rad);
     angle += angleVel;
   }
 }
