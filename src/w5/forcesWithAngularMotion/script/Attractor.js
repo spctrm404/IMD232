@@ -6,16 +6,18 @@
 //Modified by OO-SUNG SON (spctrm404)
 
 class Attractor {
-  constructor() {
-    this.pos = createVector(width / 2, height / 2);
-    this.mass = 20;
-    this.rad = 30;
+  constructor(x, y, mass, rad, distMin, distMax) {
+    this.pos = createVector(x, y);
+    this.mass = mass;
+    this.rad = rad;
+    this.distMin = distMin;
+    this.distMax = distMax;
   }
 
   attract(mover) {
     let force = p5.Vector.sub(this.pos, mover.pos);
     let distance = force.mag();
-    distance = constrain(distance, 5, 25);
+    distance = constrain(distance, this.distMin, this.distMax);
     let strength = (this.mass * mover.mass) / distance ** 2;
     force.setMag(strength);
     return force;
