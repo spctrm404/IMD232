@@ -84,11 +84,6 @@
             <li><a href="./recording/step3/index.html">step3</a></li>
             <li><a href="./recording/step4/index.html">step4</a></li>
             <li><a href="./recording/step5/index.html">step5</a></li>
-            <li><a href="./recording/step6/index.html">step6</a></li>
-            <li><a href="./recording/step7/index.html">step7</a></li>
-            <li><a href="./recording/step8/index.html">step8</a></li>
-            <li><a href="./recording/step9/index.html">step9</a></li>
-            <li><a href="./recording/step10/index.html">step10</a></li>
           </ul>
         </div>
       </section>
@@ -114,10 +109,98 @@
       <section>
         <div class="container">
           <h3>과제</h3>
-          <h6>기본</h6>
-          <p>마우스를 쫒아 등가속 운동하는 원을 만들어 온다.</p>
-          <h6>심화</h6>
-          <p>좌클릭하면 마우스로부터 도망가는 기능을 추가한다.</p>
+          <ul>
+            <li>
+              이하의 과제를 수행함에 있어, 색과 형태 등 스타일링 요소는 과제의
+              목적을 해하지 않는 선에서 여러분의 마음대로 하라.
+            </li>
+          </ul>
+          <h6>Step1: 2점</h6>
+          <ol>
+            <li><strong>w4/assignment/step1에 업로드.</strong></li>
+            <li>
+              <a href="https://www.youtube.com/watch?v=H_wi5wL4Tio">링크</a>
+              의 영상과 같이 작동하도록 코딩.
+            </li>
+            <li>모든 물체가 서로를 중력으로 끌어당기도록 한다.</li>
+            <li>초기위치는 화면 안의 임의의 지점으로 한다.</li>
+            <li>
+              <a href="./nBodiesAttraction/index.html">9번 예제</a>
+              와는 달리, 16에서 100사이의 임의의 질량값을 갖도록 한다.
+            </li>
+            <li>
+              반지름은 질량의 제곱근에 비례해 20에서 50사의의 값을 갖도록 한다.
+            </li>
+            <li>물체의 갯수는 20개를 넘어야하고, 반드시 어레이를 사용한다.</li>
+            <li>클릭하면 새로 시작해야한다.</li>
+            <li>
+              Hint
+              <ul>
+                <li>
+                  사실상
+                  <a href="./nBodiesAttraction/index.html">9번 예제</a>
+                  를 조금만 손보면 된다. 그렇기에 거져먹는 과제라 할 수 있고
+                  배점 또한 부분 점수 없이 2점이다.
+                </li>
+              </ul>
+            </li>
+            <li>
+              시작점으로 삼을 수 있는 미완성된 코드는
+              <a href="./assignment/step1/index.html">링크</a>
+              와 같다.
+            </li>
+          </ol>
+          <h6>Step2: 2점</h6>
+          <ol>
+            <li><strong>w4/assignment/step2에 업로드.</strong></li>
+            <li>
+              <a href="https://youtu.be/1n06UNfAUOI">링크</a>
+              의 영상과 같이 작동하도록 코딩
+            </li>
+            <li>
+              step5를 수정해 한개의 공이 존재하고, 그 공을 마우스로 드래그해서
+              던질 수 있게 한다.
+            </li>
+            <li>
+              마우스를 빠르게 움직이면 빠르게, 느리게 움직이면 느리게 던져지도록
+              한다.
+            </li>
+            <li>드래그 기능만 구현하면 1점, 던지기를 구현하면 2점.</li>
+            <li>
+              Hint
+              <ul>
+                <li>
+                  <code>pmouseX</code>
+                  ,
+                  <code>pmouseY</code>
+                  는 이전 프레임의 마우스 좌표를 담은 변수다. 마우스 좌표 벡터를
+                  <code>mVec</code>
+                  , 이전 프레임 마우스 좌표를
+                  <code>pMVec</code>
+                  이라 할 때.
+                  <code>p5.Vector.sub(mVec, pMVec)</code>
+                  은 이전 프레임 마우스 좌표에서 현재 프레임 마우스로 좌표로
+                  향하는 벡터가 될 것이다. 이것을 적절히 줄여서 힘으로 삼아 공에
+                  힘을 준다면...
+                </li>
+                <li>
+                  공을 드래그하는 동안,
+                  <code>applyForce</code>
+                  와
+                  <code>update</code>
+                  의 일부 혹은 전체가 작동하지 않아야 할 것이다. 드래그 상태를
+                  나타내는 변수가 드래그 기능 구현에 필요할 것이기에 이를
+                  <code>if</code>
+                  에 넣어 활용하면 될 것이다.
+                </li>
+              </ul>
+            </li>
+            <li>
+              시작점으로 삼을 수 있는 미완성된 코드는
+              <a href="./assignment/step2/index.html">링크</a>
+              와 같다.
+            </li>
+          </ol>
         </div>
       </section>
     </main>
