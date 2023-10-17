@@ -1,27 +1,18 @@
 class Mover {
   constructor(x, y, mass) {
-    this.pos = createVector(x, y);
-    this.vel = createVector();
-    this.acc = createVector();
-    this.mass = mass;
-    this.rad = this.mass ** (1 / 2) * 5;
-    this.isHover = false;
-    this.isDragging = false;
-    this.draggingOffset = createVector();
+    this.pos;
+    this.vel;
+    this.acc;
+    this.mass;
+    this.rad;
+    this.isHover;
+    this.isDragging;
+    this.draggingOffset;
   }
 
-  applyForce(force) {
-    const acc = p5.Vector.div(force, this.mass);
-    this.acc.add(acc);
-  }
+  applyForce(force) {}
 
-  update() {
-    if (!this.isDragging) {
-      this.vel.add(this.acc);
-      this.pos.add(this.vel);
-    }
-    this.acc.mult(0);
-  }
+  update() {}
 
   edgeBounce() {
     const bounce = -0.7;
@@ -40,13 +31,7 @@ class Mover {
 
   display() {
     noStroke();
-    if (this.isDragging) {
-      fill('blue');
-    } else if (this.isHover) {
-      fill('red');
-    } else {
-      fill(0);
-    }
+    fill(0);
     ellipse(this.pos.x, this.pos.y, 2 * this.rad);
   }
 
@@ -57,15 +42,11 @@ class Mover {
 
   mousePressed(mX, mY) {
     if (this.isHover) {
-      this.isDragging = true;
-      this.vel.mult(0);
-      this.draggingOffset.set(mX - this.pos.x, mY - this.pos.y);
     }
   }
 
   mouseDragged(mX, mY) {
     if (this.isDragging) {
-      this.pos.set(mX - this.draggingOffset.x, mY - this.draggingOffset.y);
     }
   }
 

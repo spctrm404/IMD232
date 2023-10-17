@@ -16,10 +16,6 @@ class Pendulum {
     this.isDragging = false;
   }
 
-  setPivotPos(pendulum) {
-    this.pos.set(pendulum.ballPos);
-  }
-
   applyGravity(gravity) {
     this.angleAcc =
       (sin(this.angle - (TAU / 360) * 90) * -gravity.y) / this.length;

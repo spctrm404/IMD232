@@ -18,32 +18,18 @@ function setup() {
 function draw() {
   const force = p5.Vector.mult(gravity, mover.mass);
 
-  mover.applyForce(force);
-  mover.update();
-  mover.edgeBounce();
-
   background(255);
-
-  mover.display();
 }
 
-function mouseMoved() {
-  mover.mouseMoved(mouseX, mouseY);
-}
+function mouseMoved() {}
 
-function mousePressed() {
-  mover.mousePressed(mouseX, mouseY);
-}
+function mousePressed() {}
 
-function mouseDragged() {
-  mover.mouseDragged(mouseX, mouseY);
-}
+function mouseDragged() {}
 
 function mouseReleased() {
-  mover.mouseReleased();
   pMVec.set(pmouseX, pmouseY);
   mVec.set(mouseX, mouseY);
-  const throwingForce = p5.Vector.sub(mVec, pMVec);
-  throwingForce.mult(15);
+
   mover.applyForce(throwingForce);
 }

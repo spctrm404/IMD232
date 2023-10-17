@@ -1,19 +1,15 @@
 class Body {
   constructor(x, y, mass) {
-    this.pos = createVector(x, y);
-    this.vel = createVector();
-    this.acc = createVector();
-    this.mass = mass;
-    // this.mass = random(16, 100);
-    this.rad = this.mass ** (1 / 2) * 5;
+    this.pos;
+    this.vel;
+    this.acc;
+    this.mass;
+    this.rad;
   }
 
   attract(body) {
     const force = p5.Vector.sub(this.pos, body.pos);
-    let distance = force.mag();
-    distance = constrain(5, 25);
-    const strength = (G * this.mass * body.mass) / distance ** 2;
-    force.setMag(strength);
+
     return force;
   }
 
@@ -25,7 +21,7 @@ class Body {
   update() {
     this.vel.add(this.acc);
     this.pos.add(this.vel);
-    this.acc.mult(0);
+    this.acc.set(0, 0);
   }
 
   display() {
