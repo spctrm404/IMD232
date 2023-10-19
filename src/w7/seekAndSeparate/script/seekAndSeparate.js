@@ -12,7 +12,7 @@ function setup() {
   setCanvasContainer('canvas', 3, 2, true);
   for (let i = 0; i < 50; i++) {
     vehicles.push(
-      new Vehicle(random(width), random(height), 1, random(6, 18), 3, 0.2, 100)
+      new Vehicle(random(width), random(height), 1, random(6, 18), 3, 0.2)
     );
   }
   mVec = createVector();

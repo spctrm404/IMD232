@@ -6,7 +6,7 @@
 //Modified by OO-SUNG SON (spctrm404)
 
 class Vehicle {
-  constructor(x, y, mass, rad, speedMx, forceMx, decRad) {
+  constructor(x, y, mass, rad, speedMx, forceMx) {
     this.pos = createVector(x, y);
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
@@ -14,7 +14,6 @@ class Vehicle {
     this.rad = rad;
     this.speedMx = speedMx;
     this.forceMx = forceMx;
-    this.decRad = decRad;
   }
 
   update() {
@@ -41,39 +40,34 @@ class Vehicle {
 
   seek(target) {
     const desired = p5.Vector.sub(target, this.pos);
-    const dist = desired.mag();
-    if (dist < this.decRad) {
-      const speed = map(dist, 0, this.decRad, 0, this.speedMx);
-      desired.setMag(speed);
-    } else {
-      desired.setMag(this.speedMx);
-    }
+    desired.setMag(this.speedMx);
     const steer = p5.Vector.sub(desired, this.vel);
     steer.limit(this.forceMx);
     return steer;
   }
 
   separate(vehicles) {
-    let steer = createVector(0, 0);
-    const sum = createVector(0, 0);
+    const steer = createVector(0, 0);
     let count = 0;
     vehicles.forEach((each) => {
       if (this !== each) {
-        const desired = this.rad + each.rad;
+        const desiredDist = this.rad + each.rad;
         const dist = p5.Vector.dist(this.pos, each.pos);
-        if (dist < desired) {
+        if (dist > 0 && dist < desiredDist) {
           const diff = p5.Vector.sub(this.pos, each.pos);
           diff.setMag(1 / dist);
-          sum.add(diff);
+          steer.add(diff);
           count++;
         }
       }
     });
     if (count > 0) {
-      sum.setMag(this.speedMx);
-      steer = p5.Vector.sub(sum, this.vel);
+      steer.div(count);
+    }
+    if (steer.mag() > 0) {
+      steer.setMag(this.speedMx);
+      steer.sub(this.vel);
       steer.limit(this.forceMx);
-      this.applyForce(steer);
     }
     return steer;
   }

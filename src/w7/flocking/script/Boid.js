@@ -7,16 +7,17 @@
 
 class Boid {
   constructor(x, y, mass, rad, speedMx, forceMx) {
-    this.pos = createVector(x, y);
-    this.vel = createVector(random(-1, 1), random(-1, 1));
     this.acc = createVector(0, 0);
+    this.vel = p5.Vector.random2D();
+    this.pos = createVector(x, y);
     this.mass = mass;
     this.rad = rad;
     this.speedMx = speedMx;
     this.forceMx = forceMx;
-    this.separateFactor = 1.5;
-    this.alignFactor = 1.0;
-    this.cohereFactor = 1.0;
+    this.sepFactor = 1.5;
+    this.aliFactor = 1.0;
+    this.cohFactor = 1.0;
+    this.separationDist = 10;
     this.neighborDist = 50;
   }
 
@@ -27,16 +28,16 @@ class Boid {
     this.display();
   }
 
+  applyForce(force) {
+    const acc = p5.Vector.div(force, this.mass);
+    this.acc.add(acc);
+  }
+
   update() {
     this.vel.add(this.acc);
     this.vel.limit(this.speedMx);
     this.pos.add(this.vel);
     this.acc.mult(0);
-  }
-
-  applyForce(force) {
-    const acc = p5.Vector.div(force, this.mass);
-    this.acc.add(acc);
   }
 
   display() {
@@ -54,8 +55,19 @@ class Boid {
     pop();
   }
 
+  flock(boids) {
+    let sep = this.separate(boids);
+    let ali = this.align(boids);
+    let coh = this.cohere(boids);
+    sep.mult(this.sepFactor);
+    ali.mult(this.aliFactor);
+    coh.mult(this.cohFactor);
+    this.applyForce(sep);
+    this.applyForce(ali);
+    this.applyForce(coh);
+  }
+
   seek(target) {
-    if (target === null) return createVector(0, 0);
     const desired = p5.Vector.sub(target, this.pos);
     desired.setMag(this.speedMx);
     const steer = p5.Vector.sub(desired, this.vel);
@@ -63,83 +75,74 @@ class Boid {
     return steer;
   }
 
-  flock(boids) {
-    let separateForce = this.separate(boids);
-    let alignForce = this.align(boids);
-    let cohereForce = this.cohere(boids);
-    separateForce.mult(this.separateFactor);
-    alignForce.mult(this.alignFactor);
-    cohereForce.mult(this.cohereFactor);
-    this.applyForce(separateForce);
-    this.applyForce(alignForce);
-    this.applyForce(cohereForce);
-  }
-
   separate(boids) {
     let steer = createVector(0, 0);
-    const sum = createVector(0, 0);
     let count = 0;
     boids.forEach((each) => {
       if (this !== each) {
-        const desired = this.rad + each.rad;
-        const dist = p5.Vector.dist(this.pos, each.pos);
-        if (dist < desired) {
-          const diff = p5.Vector.sub(this.pos, each.pos);
+        const desiredDist = this.separationDist + (this.rad + each.rad);
+        // const desiredDist = 25;
+        let dist = p5.Vector.dist(this.pos, each.pos);
+        if (dist > 0 && dist < desiredDist) {
+          let diff = p5.Vector.sub(this.pos, each.pos);
           diff.setMag(1 / dist);
-          sum.add(diff);
+          steer.add(diff);
           count++;
         }
       }
     });
     if (count > 0) {
-      sum.setMag(this.speedMx);
-      steer = p5.Vector.sub(sum, this.vel);
+      steer.div(count);
+    }
+    if (steer.mag() > 0) {
+      steer.setMag(this.speedMx);
+      steer.sub(this.vel);
       steer.limit(this.forceMx);
-      this.applyForce(steer);
     }
     return steer;
   }
 
   align(boids) {
-    let steer = createVector(0, 0);
-    let sum = createVector(0, 0);
+    const steer = createVector(0, 0);
     let count = 0;
     boids.forEach((each) => {
       if (this !== each) {
-        const dist = p5.Vector.dist(this.pos, each.pos);
-        if (dist < this.neighborDistance) {
-          sum.add(each.vel);
+        let dist = p5.Vector.dist(this.pos, each.pos);
+        if (dist > 0 && dist < this.neighborDist) {
+          steer.add(each.vel);
           count++;
         }
       }
     });
     if (count > 0) {
-      sum.div(count);
-      sum.setMag(this.speedMx);
-      steer = p5.Vector.sub(sum, this.vel);
+      steer.div(count);
+      steer.setMag(this.speedMx);
+      steer.sub(this.vel);
       steer.limit(this.forceMx);
+      return steer;
+    } else {
+      return createVector(0, 0);
     }
-    return steer;
   }
 
   cohere(boids) {
-    let sum = createVector(0, 0);
+    const steer = createVector(0, 0);
     let count = 0;
     boids.forEach((each) => {
       if (this !== each) {
-        const dist = p5.Vector.dist(this.pos, each.pos);
-        if (dist < this.neighborDistance) {
-          sum.add(each.pos);
+        let dist = p5.Vector.dist(this.pos, each.pos);
+        if (dist > 0 && dist < this.neighborDist) {
+          steer.add(each.pos);
           count++;
         }
       }
     });
     if (count > 0) {
-      sum.div(count);
+      steer.div(count);
+      return this.seek(steer);
     } else {
-      sum = null;
+      return createVector(0, 0);
     }
-    return this.seek(sum);
   }
 
   borderInfinite() {

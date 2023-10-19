@@ -39,23 +39,26 @@ class Vehicle {
   }
 
   separate(vehicles) {
-    const sum = createVector(0, 0);
+    const steer = createVector(0, 0);
     let count = 0;
     vehicles.forEach((each) => {
       if (this !== each) {
-        const desired = this.rad + each.rad;
+        const desiredDist = this.rad + each.rad;
         const dist = p5.Vector.dist(this.pos, each.pos);
-        if (dist < desired) {
+        if (dist > 0 && dist < desiredDist) {
           const diff = p5.Vector.sub(this.pos, each.pos);
           diff.setMag(1 / dist);
-          sum.add(diff);
+          steer.add(diff);
           count++;
         }
       }
     });
     if (count > 0) {
-      sum.setMag(this.speedMx);
-      const steer = p5.Vector.sub(sum, this.vel);
+      steer.div(count);
+    }
+    if (steer.mag() > 0) {
+      steer.setMag(this.speedMx);
+      steer.sub(this.vel);
       steer.limit(this.forceMx);
       this.applyForce(steer);
     }
