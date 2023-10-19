@@ -1,4 +1,6 @@
 let dataPoint = [];
+let noiseX = 0;
+let noiseXAdd = 0.05;
 
 function setup() {
   setCanvasContainer('canvas', 3, 2, true);
@@ -10,13 +12,11 @@ function setup() {
   }
 
   background(255);
-  randomSeed(50);
 }
 
 function draw() {
-  // dataPoint[dataPoint.length - 1] = map(mouseY, 0, height, 1, 0);
-  // randomSeed(0);
-  dataPoint[dataPoint.length - 1] = random();
+  // dataPoint[dataPoint.length - 1] = random();
+  dataPoint[dataPoint.length - 1] = noise(noiseX);
   background(255);
   noStroke();
   fill(0);
@@ -37,4 +37,5 @@ function draw() {
   for (let i = 0; i < dataPoint.length - 1; i++) {
     dataPoint[i] = dataPoint[i + 1];
   }
+  noiseX += noiseXAdd;
 }
