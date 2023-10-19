@@ -10,7 +10,7 @@ let mVec;
 
 function setup() {
   setCanvasContainer('canvas', 3, 2, true);
-  vehicle = new Vehicle(width / 2, height / 2, 1);
+  vehicle = new Vehicle(width / 2, height / 2, 1, 6, 8, 0.2);
   mVec = createVector();
 }
 

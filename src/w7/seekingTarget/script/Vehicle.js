@@ -6,14 +6,14 @@
 //Modified by OO-SUNG SON (spctrm404)
 
 class Vehicle {
-  constructor(x, y, mass) {
+  constructor(x, y, mass, rad, speedMx, forceMx) {
     this.pos = createVector(x, y);
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
     this.mass = mass;
-    this.rad = 6;
-    this.speedMx = 8;
-    this.forceMx = 0.2;
+    this.rad = rad;
+    this.speedMx = speedMx;
+    this.forceMx = forceMx;
   }
 
   update() {
@@ -26,15 +26,6 @@ class Vehicle {
   applyForce(force) {
     const acc = p5.Vector.div(force, this.mass);
     this.acc.add(acc);
-  }
-
-  seek(target) {
-    const desired = p5.Vector.sub(target, this.pos);
-    desired.setMag(this.speedMx);
-    const steer = p5.Vector.sub(desired, this.vel);
-    steer.limit(this.forceMx);
-
-    this.applyForce(steer);
   }
 
   display() {
@@ -50,5 +41,13 @@ class Vehicle {
     vertex(-this.rad * 2, this.rad);
     endShape(CLOSE);
     pop();
+  }
+
+  seek(target) {
+    const desired = p5.Vector.sub(target, this.pos);
+    desired.setMag(this.speedMx);
+    const steer = p5.Vector.sub(desired, this.vel);
+    steer.limit(this.forceMx);
+    this.applyForce(steer);
   }
 }

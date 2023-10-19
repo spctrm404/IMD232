@@ -10,7 +10,9 @@ let vehicles = [];
 function setup() {
   setCanvasContainer('canvas', 3, 2, true);
   for (let i = 0; i < 25; i++) {
-    vehicles.push(new Vehicle(random(width), random(height), 1, 3, 0.2));
+    vehicles.push(
+      new Vehicle(random(width), random(height), 1, random(6, 18), 3, 0.2)
+    );
   }
 }
 
@@ -20,11 +22,11 @@ function draw() {
   vehicles.forEach((each) => {
     each.separate(vehicles);
     each.update();
-    each.borders();
+    each.borderInfinite();
     each.display();
   });
 }
 
 function mouseDragged() {
-  vehicles.push(new Vehicle(mouseX, mouseY, 1, 3, 0.2));
+  vehicles.push(new Vehicle(mouseX, mouseY, 1, random(6, 18), 3, 0.2));
 }

@@ -6,23 +6,15 @@
 //Modified by OO-SUNG SON (spctrm404)
 
 class Vehicle {
-  constructor(x, y, mass, speedMx, forceMx) {
+  constructor(x, y, mass, rad, speedMx, forceMx) {
     this.pos = createVector(x, y);
     this.vel = p5.Vector.random2D();
     this.vel.mult(5);
     this.acc = createVector(0, 0);
     this.mass = mass;
-    this.rad = 4;
+    this.rad = rad;
     this.speedMx = speedMx;
     this.forceMx = forceMx;
-  }
-
-  follow(flow) {
-    const desired = flow.lookup(this.pos);
-    desired.mult(this.speedMx);
-    const steer = p5.Vector.sub(desired, this.vel);
-    steer.limit(this.forceMx);
-    this.applyForce(steer);
   }
 
   update() {
@@ -35,13 +27,6 @@ class Vehicle {
   applyForce(force) {
     const acc = p5.Vector.div(force, this.mass);
     this.acc.add(acc);
-  }
-
-  borders() {
-    if (this.pos.x < -this.rad) this.pos.x = width + this.rad;
-    if (this.pos.y < -this.rad) this.pos.y = height + this.rad;
-    if (this.pos.x > width + this.rad) this.pos.x = -this.rad;
-    if (this.pos.y > height + this.rad) this.pos.y = -this.rad;
   }
 
   display() {
@@ -57,5 +42,26 @@ class Vehicle {
     vertex(-this.rad * 2, this.rad);
     endShape(CLOSE);
     pop();
+  }
+
+  follow(flow) {
+    const desired = flow.lookup(this.pos);
+    desired.mult(this.speedMx);
+    const steer = p5.Vector.sub(desired, this.vel);
+    steer.limit(this.forceMx);
+    this.applyForce(steer);
+  }
+
+  borderInfinite() {
+    if (this.pos.x < -this.rad) {
+      this.pos.x = width + this.rad;
+    } else if (this.pos.x > width + this.rad) {
+      this.pos.x = -this.rad;
+    }
+    if (this.pos.y < -this.rad) {
+      this.pos.y = height + this.rad;
+    } else if (this.pos.y > height + this.rad) {
+      this.pos.y = -this.rad;
+    }
   }
 }

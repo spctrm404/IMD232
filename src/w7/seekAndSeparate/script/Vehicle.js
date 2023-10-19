@@ -1,7 +1,7 @@
-// Original Code from: https://editor.p5js.org/natureofcode/sketches/v-yJm8WUx
+// Original Code from: https://editor.p5js.org/natureofcode/sketches/UJEwENSN3
 // Daniel Shiffman
 // The Nature of Code
-// Example 5-2: Arriving at a Target
+// Example 5-8: Combining Steering Behaviors (Seek and Separate)
 
 //Modified by OO-SUNG SON (spctrm404)
 
@@ -30,17 +30,12 @@ class Vehicle {
   }
 
   display() {
-    const angle = this.vel.heading();
     fill(127);
     stroke(0);
+    strokeWeight(2);
     push();
     translate(this.pos.x, this.pos.y);
-    rotate(angle);
-    beginShape();
-    vertex(this.rad * 2, 0);
-    vertex(-this.rad * 2, -this.rad);
-    vertex(-this.rad * 2, this.rad);
-    endShape(CLOSE);
+    circle(0, 0, 2 * this.rad);
     pop();
   }
 
@@ -55,6 +50,31 @@ class Vehicle {
     }
     const steer = p5.Vector.sub(desired, this.vel);
     steer.limit(this.forceMx);
-    this.applyForce(steer);
+    return steer;
+  }
+
+  separate(vehicles) {
+    let steer = createVector(0, 0);
+    const sum = createVector(0, 0);
+    let count = 0;
+    vehicles.forEach((each) => {
+      if (this !== each) {
+        const desired = this.rad + each.rad;
+        const dist = p5.Vector.dist(this.pos, each.pos);
+        if (dist < desired) {
+          const diff = p5.Vector.sub(this.pos, each.pos);
+          diff.setMag(1 / dist);
+          sum.add(diff);
+          count++;
+        }
+      }
+    });
+    if (count > 0) {
+      sum.setMag(this.speedMx);
+      steer = p5.Vector.sub(sum, this.vel);
+      steer.limit(this.forceMx);
+      this.applyForce(steer);
+    }
+    return steer;
   }
 }

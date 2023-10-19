@@ -11,7 +11,7 @@ const offset = 25;
 
 function setup() {
   setCanvasContainer('canvas', 3, 2, true);
-  vehicle = new Vehicle(width / 2, height / 2, 1);
+  vehicle = new Vehicle(width / 2, height / 2, 1, 6, 3, 0.15, 100);
   mVec = createVector();
 }
 
@@ -25,7 +25,7 @@ function draw() {
     rect(width / 2, height / 2, width - offset * 2, height - offset * 2);
   }
 
-  vehicle.boundaries(offset);
+  vehicle.borderStay(offset);
   vehicle.update();
   vehicle.display();
 }

@@ -18,6 +18,7 @@ function setup() {
         random(width),
         random(height),
         1,
+        4,
         random(2, 5),
         random(0.1, 0.5)
       )
@@ -33,7 +34,7 @@ function draw() {
   vehicles.forEach((each) => {
     each.follow(flowfield);
     each.update();
-    each.borders();
+    each.borderInfinite();
     each.display();
   });
 }
