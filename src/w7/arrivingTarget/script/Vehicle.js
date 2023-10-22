@@ -45,15 +45,15 @@ class Vehicle {
   }
 
   seek(target) {
-    const desired = p5.Vector.sub(target, this.pos);
-    const dist = desired.mag();
+    const steer = p5.Vector.sub(target, this.pos);
+    const dist = steer.mag();
     if (dist < this.decRad) {
       const speed = map(dist, 0, this.decRad, 0, this.speedMx);
-      desired.setMag(speed);
+      steer.setMag(speed);
     } else {
-      desired.setMag(this.speedMx);
+      steer.setMag(this.speedMx);
     }
-    const steer = p5.Vector.sub(desired, this.vel);
+    steer.sub(this.vel);
     steer.limit(this.forceMx);
     this.applyForce(steer);
   }

@@ -11,7 +11,7 @@ let vehicles = [];
 
 function setup() {
   setCanvasContainer('canvas', 3, 2, true);
-  flowfield = new FlowField(20);
+  flowfield = new FlowField(20, 0.1);
   for (let i = 0; i < 1000; i++) {
     vehicles.push(
       new Vehicle(

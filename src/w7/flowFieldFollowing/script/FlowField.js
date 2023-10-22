@@ -6,10 +6,11 @@
 //Modified by OO-SUNG SON (spctrm404)
 
 class FlowField {
-  constructor(resolution) {
+  constructor(resolution, noiseVel) {
     this.resolution = resolution;
-    this.columns = floor(width / this.resolution);
-    this.rows = floor(height / this.resolution);
+    this.noiseVel = noiseVel;
+    this.columns = ceil(width / this.resolution);
+    this.rows = ceil(height / this.resolution);
     this.field = new Array(this.columns);
     for (let col = 0; col < this.columns; col++) {
       this.field[col] = new Array(this.rows);
@@ -25,21 +26,20 @@ class FlowField {
       for (let rowIdx = 0; rowIdx < this.rows; rowIdx++) {
         let angle = map(noise(xoff, yoff), 0, 1, 0, TAU);
         this.field[colIdx][rowIdx] = p5.Vector.fromAngle(angle);
-        yoff += 0.1;
+        yoff += this.noiseVel;
       }
-      xoff += 0.1;
+      xoff += this.noiseVel;
     }
   }
 
   display() {
     for (let colIdx = 0; colIdx < this.columns; colIdx++) {
       for (let rowIdx = 0; rowIdx < this.rows; rowIdx++) {
-        const w = width / this.columns;
-        const h = height / this.rows;
+        const s = this.resolution;
         const v = this.field[colIdx][rowIdx].copy();
-        v.setMag(w * 0.5);
-        let x = colIdx * w + w / 2;
-        let y = rowIdx * h + h / 2;
+        v.setMag(s * 0.5);
+        const x = s * colIdx + s / 2;
+        const y = s * rowIdx + s / 2;
         strokeWeight(1);
         line(x, y, x + v.x, y + v.y);
       }

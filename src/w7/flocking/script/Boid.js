@@ -68,15 +68,15 @@ class Boid {
   }
 
   seek(target) {
-    const desired = p5.Vector.sub(target, this.pos);
-    desired.setMag(this.speedMx);
-    const steer = p5.Vector.sub(desired, this.vel);
+    const steer = p5.Vector.sub(target, this.pos);
+    steer.setMag(this.speedMx);
+    steer.sub(this.vel);
     steer.limit(this.forceMx);
     return steer;
   }
 
   separate(boids) {
-    let steer = createVector(0, 0);
+    const steer = createVector(0, 0);
     let count = 0;
     boids.forEach((each) => {
       if (this !== each) {
@@ -119,10 +119,10 @@ class Boid {
       steer.setMag(this.speedMx);
       steer.sub(this.vel);
       steer.limit(this.forceMx);
-      return steer;
     } else {
-      return createVector(0, 0);
+      steer.mult(0);
     }
+    return steer;
   }
 
   cohere(boids) {
@@ -139,10 +139,10 @@ class Boid {
     });
     if (count > 0) {
       steer.div(count);
-      return this.seek(steer);
     } else {
-      return createVector(0, 0);
+      steer.mult(0);
     }
+    return this.seek(steer);
   }
 
   borderInfinite() {

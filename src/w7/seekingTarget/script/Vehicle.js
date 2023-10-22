@@ -44,9 +44,9 @@ class Vehicle {
   }
 
   seek(target) {
-    const desired = p5.Vector.sub(target, this.pos);
-    desired.setMag(this.speedMx);
-    const steer = p5.Vector.sub(desired, this.vel);
+    const steer = p5.Vector.sub(target, this.pos);
+    steer.setMag(this.speedMx);
+    steer.sub(this.vel);
     steer.limit(this.forceMx);
     this.applyForce(steer);
   }

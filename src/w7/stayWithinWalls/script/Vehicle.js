@@ -46,34 +46,34 @@ class Vehicle {
   }
 
   seek(target) {
-    const desired = p5.Vector.sub(target, this.pos);
-    const dist = desired.mag();
+    const steer = p5.Vector.sub(target, this.pos);
+    const dist = steer.mag();
     if (dist < this.decRad) {
       const speed = map(dist, 0, this.decRad, 0, this.speedMx);
-      desired.setMag(speed);
+      steer.setMag(speed);
     } else {
-      desired.setMag(this.speedMx);
+      steer.setMag(this.speedMx);
     }
-    const steer = p5.Vector.sub(desired, this.vel);
+    steer.sub(this.vel);
     steer.limit(this.forceMx);
     this.applyForce(steer);
   }
 
   borderStay(offset) {
-    let desired = null;
+    let steer = null;
     if (this.pos.x < offset) {
-      desired = createVector(this.speedMx, this.vel.y);
+      steer = createVector(this.speedMx, this.vel.y);
     } else if (this.pos.x > width - offset) {
-      desired = createVector(-this.speedMx, this.vel.y);
+      steer = createVector(-this.speedMx, this.vel.y);
     }
     if (this.pos.y < offset) {
-      desired = createVector(this.vel.x, this.speedMx);
+      steer = createVector(this.vel.x, this.speedMx);
     } else if (this.pos.y > height - offset) {
-      desired = createVector(this.vel.x, -this.speedMx);
+      steer = createVector(this.vel.x, -this.speedMx);
     }
-    if (desired !== null) {
-      desired.setMag(this.speedMx);
-      const steer = p5.Vector.sub(desired, this.vel);
+    if (steer !== null) {
+      steer.setMag(this.speedMx);
+      steer.sub(this.vel);
       steer.limit(this.forceMx);
       this.applyForce(steer);
     }
