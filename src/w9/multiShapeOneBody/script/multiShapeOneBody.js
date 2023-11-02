@@ -1,7 +1,7 @@
-// Original Code from: https://editor.p5js.org/natureofcode/sketches/WSoUy03ph
+// Original Code from: https://editor.p5js.org/natureofcode/sketches/xxYF4I5bi
 // Daniel Shiffman
 // The Nature of Code
-// Example 6-3: Falling Boxes Hitting Boundaries
+// Example 6-5: Multiple Shapes on One Body
 
 //Modified by OO-SUNG SON (spctrm404)
 
@@ -9,8 +9,10 @@ const { Engine, Bodies, Composite, Body, Vector } = Matter;
 
 let engine;
 
-let boxes = [];
+let maracas = [];
 let boundaries = [];
+
+let debug = false;
 
 function setup() {
   setCanvasContainer('canvas', 3, 2, true);
@@ -37,23 +39,31 @@ function draw() {
   Engine.update(engine);
 
   if (random(1) < 0.1) {
-    let b = new Box(width / 2, 50, random(8, 16), random(8, 16), {
-      restitution: 0.6,
+    let m = new Maraca(width / 2, 50, 24, 4, 8, {
+      restitution: 0.2,
     });
-    b.setVelocity(p5.Vector.random2D().mult(5));
-    b.setAngularVelocity(0.1);
-    boxes.push(b);
+    m.setVelocity(p5.Vector.random2D().mult(5));
+    m.setAngularVelocity(0.1);
+    maracas.push(m);
   }
 
-  for (let idx = boxes.length - 1; idx >= 0; idx--) {
-    boxes[idx].display();
-    if (boxes[idx].checkEdge()) {
-      boxes[idx].removeBody();
-      boxes.splice(idx, 1);
+  for (let idx = maracas.length - 1; idx >= 0; idx--) {
+    if (debug) {
+      maracas[idx].displayWrong();
+    } else {
+      maracas[idx].display();
+    }
+    if (maracas[idx].checkEdge()) {
+      maracas[idx].removeBody();
+      maracas.splice(idx, 1);
     }
   }
 
   boundaries.forEach((each) => {
     each.display();
   });
+}
+
+function mousePressed() {
+  debug = !debug;
 }

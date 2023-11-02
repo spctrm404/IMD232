@@ -1,7 +1,7 @@
-// Original Code from: https://editor.p5js.org/natureofcode/sketches/WSoUy03ph
+// Original Code from: https://editor.p5js.org/natureofcode/sketches/xxYF4I5bi
 // Daniel Shiffman
 // The Nature of Code
-// Example 6-3: Falling Boxes Hitting Boundaries
+// Example 6-5: Multiple Shapes on One Body
 
 //Modified by OO-SUNG SON (spctrm404)
 

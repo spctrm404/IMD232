@@ -1,7 +1,7 @@
-// Original Code from: https://editor.p5js.org/natureofcode/sketches/WSoUy03ph
+// Original Code from: https://editor.p5js.org/natureofcode/sketches/o3-Qpqu2i
 // Daniel Shiffman
 // The Nature of Code
-// Example 6-3: Falling Boxes Hitting Boundaries
+// Example 6-4: Polygon Shapes
 
 //Modified by OO-SUNG SON (spctrm404)
 
@@ -9,7 +9,7 @@ const { Engine, Bodies, Composite, Body, Vector } = Matter;
 
 let engine;
 
-let boxes = [];
+let polygons = [];
 let boundaries = [];
 
 function setup() {
@@ -37,19 +37,19 @@ function draw() {
   Engine.update(engine);
 
   if (random(1) < 0.1) {
-    let b = new Box(width / 2, 50, random(8, 16), random(8, 16), {
-      restitution: 0.6,
+    let p = new Polygon(width / 2, 50, {
+      restitution: 0.2,
     });
-    b.setVelocity(p5.Vector.random2D().mult(5));
-    b.setAngularVelocity(0.1);
-    boxes.push(b);
+    p.setVelocity(p5.Vector.random2D().mult(5));
+    p.setAngularVelocity(0.1);
+    polygons.push(p);
   }
 
-  for (let idx = boxes.length - 1; idx >= 0; idx--) {
-    boxes[idx].display();
-    if (boxes[idx].checkEdge()) {
-      boxes[idx].removeBody();
-      boxes.splice(idx, 1);
+  for (let idx = polygons.length - 1; idx >= 0; idx--) {
+    polygons[idx].display();
+    if (polygons[idx].checkEdge()) {
+      polygons[idx].removeBody();
+      polygons.splice(idx, 1);
     }
   }
 

@@ -1,7 +1,7 @@
-// Original Code from: https://editor.p5js.org/natureofcode/sketches/WSoUy03ph
+// Original Code from: https://editor.p5js.org/natureofcode/sketches/o3-Qpqu2i
 // Daniel Shiffman
 // The Nature of Code
-// Example 6-3: Falling Boxes Hitting Boundaries
+// Example 6-4: Polygon Shapes
 
 //Modified by OO-SUNG SON (spctrm404)
 

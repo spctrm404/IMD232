@@ -1,15 +1,14 @@
-// Original Code from: https://editor.p5js.org/natureofcode/sketches/WSoUy03ph
+// Original Code from: https://editor.p5js.org/natureofcode/sketches/D96JFWc3-
 // Daniel Shiffman
 // The Nature of Code
-// Example 6-3: Falling Boxes Hitting Boundaries
+// Example 6-7: Spinning Windmill
 
 //Modified by OO-SUNG SON (spctrm404)
 
-class Boundary {
+class Box {
   constructor(x, y, w, h, options) {
     this.w = w;
     this.h = h;
-    options.isStatic = true;
     this.body = Bodies.rectangle(x, y, this.w, this.h, options);
     Composite.add(engine.world, this.body);
   }
@@ -31,5 +30,13 @@ class Boundary {
     // rectMode(CENTER);
     rect(0, 0, this.w, this.h);
     pop();
+  }
+
+  checkEdge() {
+    return this.body.position.y > height + this.w + this.h;
+  }
+
+  removeBody() {
+    Composite.remove(engine.world, this.body);
   }
 }

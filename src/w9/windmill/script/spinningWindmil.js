@@ -1,16 +1,17 @@
-// Original Code from: https://editor.p5js.org/natureofcode/sketches/WSoUy03ph
+// Original Code from: https://editor.p5js.org/natureofcode/sketches/D96JFWc3-
 // Daniel Shiffman
 // The Nature of Code
-// Example 6-3: Falling Boxes Hitting Boundaries
+// Example 6-7: Spinning Windmill
 
 //Modified by OO-SUNG SON (spctrm404)
 
-const { Engine, Bodies, Composite, Body, Vector } = Matter;
+const { Engine, Bodies, Composite, Constraint, Body, Vector } = Matter;
 
 let engine;
 
+let windmill;
+
 let boxes = [];
-let boundaries = [];
 
 function setup() {
   setCanvasContainer('canvas', 3, 2, true);
@@ -19,16 +20,7 @@ function setup() {
 
   engine = Engine.create();
 
-  boundaries.push(
-    new Boundary(width / 4, height - 5, width / 2 - 50, 10, {
-      restitution: 0.6,
-    })
-  );
-  boundaries.push(
-    new Boundary((3 * width) / 4, height - 50, width / 2 - 50, 10, {
-      restitution: 0.6,
-    })
-  );
+  windmill = new Windmill(width / 2, height - 50, width / 3, 10);
 }
 
 function draw() {
@@ -36,7 +28,7 @@ function draw() {
 
   Engine.update(engine);
 
-  if (random(1) < 0.1) {
+  if (random(1) < 0.5) {
     let b = new Box(width / 2, 50, random(8, 16), random(8, 16), {
       restitution: 0.6,
     });
@@ -53,7 +45,5 @@ function draw() {
     }
   }
 
-  boundaries.forEach((each) => {
-    each.display();
-  });
+  windmill.display();
 }
