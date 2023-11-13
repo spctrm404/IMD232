@@ -5,13 +5,17 @@ const rowNum = 10,
 function setup() {
   setCanvasContainer('canvas', 1, 1, true);
 
+  const w = width / colNum;
+  const h = w;
   for (let row = 0; row < rowNum; row++) {
     for (let col = 0; col < colNum; col++) {
-      const newTile = new StateTile(col, row, rowNum, colNum);
+      const x = w * col;
+      const y = h * row;
+      const newTile = new ToggleTile(x, y, w, h);
       tiles.push(newTile);
-      console.log(`${newTile.getX()}, ${newTile.getY()}`);
     }
   }
+  background(255);
 }
 
 function draw() {
@@ -23,7 +27,6 @@ function draw() {
 }
 
 function mouseClicked() {
-  for (let idx = 0; idx < tiles.length; idx++) {
-    tiles[idx].mouseClicked(mouseX, mouseY);
-  }
+  for (let idx = 0; idx < tiles.length; idx++)
+    if (tiles[idx].toggleState(mouseX, mouseY)) break;
 }
