@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+  min-height: 100dvh;
+}
+
+.container.imgContainer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.container.imgContainer > img {
+  max-width: max(25%, 200px);
+  object-fit: cover;
+  overflow: hidden;
+}
+
+#img1 {
+  aspect-ratio: 1 / 1;
+}
+
+#img2 {
+  aspect-ratio: 16 / 9;
+}
+
+#sketchA {
+  position: absolute;
+  background-color: brown;
+  inset: 1rem 2rem 3rem 4rem;
+}

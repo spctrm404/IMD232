@@ -28,9 +28,9 @@ function setup() {
 
 function draw() {
   background('white');
-  //   captureDot();
+  captureDot();
   //   captureIR();
-  captureMagnify();
+  //   captureMagnify();
 }
 
 function captureDot() {
