@@ -8,11 +8,11 @@ class MatterRect {
   }
 
   display() {
-    // push();
-    // translate(ratio * this.body.position.x, ratio * this.body.position.y);
-    // rotate(this.body.angle);
-    // rect(0, 0, ratio * this.w, ratio * this.h);
-    // pop();
+    push();
+    translate(ratio * this.body.position.x, ratio * this.body.position.y);
+    rotate(this.body.angle);
+    rect(0, 0, ratio * this.w, ratio * this.h);
+    pop();
     push();
     translate(ratio * this.body.position.x, ratio * this.body.position.y);
     textAlign(CENTER, CENTER);

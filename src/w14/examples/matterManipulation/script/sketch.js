@@ -83,12 +83,12 @@ function setup() {
     })
   );
 
-  // m = Mouse.create(document.querySelector('.p5Canvas'));
-  // m.pixelRatio = pixelDensity();
-  // mc = MouseConstraint.create(matterEngine, {
-  //   mouse: m,
-  // });
-  // Composite.add(matterEngine.world, mc);
+  m = Mouse.create(document.querySelector('.p5Canvas'));
+  m.pixelRatio = pixelDensity() * ratio;
+  mc = MouseConstraint.create(matterEngine, {
+    mouse: m,
+  });
+  Composite.add(matterEngine.world, mc);
 
   matterEngine.gravity.y = -0.01;
 
@@ -117,4 +117,5 @@ function windowResized() {
     canvasContainer.clientWidth / aspectRatio
   );
   ratio = width / fixedWidth;
+  m.pixelRatio = pixelDensity() * ratio;
 }
